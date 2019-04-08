@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>猪瘟数据图表Test</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+        <script src="./js/libs/d3/d3.js" charset="utf-8"></script>
+    </head>
+    <style>
+
+        body{
+            width: 100%; margin:0; height:auto; 
+            background-image: url("img/China_shadow.jpg");
+            background-repeat:no-repeat;
+            background-size: 1200px auto;
+        }
+
+        #geo-chart { 
+            height:700;
+            margin: 0 auto;
+        }
+
+        #infection_map{
+            margin: 0 auto;
+        }
+
+        path{
+            stroke-width:1;
+        }
+
+        path:hover{
+            stroke-width:2;
+        }
+        .circle_increase,
+        .province_increase,
+        .province,
+        #prev_day,
+        #next_day{
+            cursor: pointer;
+        }
+
+/*??为啥不能变鼠标啊………………………………*/
+
+
+        #date_changeBox{
+            position: absolute;
+        }
+       
+        #legend {
+            position: absolute; top:150px;
+        } 
+
+        #details_chart {
+            position: absolute;
+            background: rgba(36, 113, 163,0.3);
+            width: 400px;
+            top: 10px;
+            right: 0px;
+            z-index: 10;
+        }
+
+        #details_chart h2 {
+            color: black;
+            text-align: center;
+            border-bottom: 1px solid #9E9E9E;
+            padding: 10px;
+        }
+
+        #details_chart #close_icon {
+            position: relative;
+            display: block;
+            clear: both;
+            float: right;
+            right: 10px;
+            padding-top: 10px;
+            cursor: pointer;
+        }
+
+        #details_chart #close_icon img{
+            width: 30px;
+            opacity: 0.5;
+        }
+
+/*//关闭按钮………………………………………………………………………………………………*/
+
+        #details_chart table #table_box {
+            color: black;
+            text-align: left;
+            width: 80%;
+            margin: auto;
+            padding-bottom: 1rem;
+        }
+
+        details_chart th {
+            color: black;
+            font-weight: bold;
+            text-align: left;
+            padding: 5rem;
+
+        }
+
+        #details_chart tr {
+            color: black;
+            text-align: left;
+
+        }
+
+        #details_chart .date , #details_chart .loc{
+            color: black;
+            text-align: left;
+        }
+
+    </style>
+
+    <body>
+        <div id="date_changeBox">
+            <svg width="170" height="140" style="background:#fff0">
+                <rect x="10" y="10" width="150" height="120" stroke="#000000" stroke-width="3" style="fill:#fff9e6" />
+                <rect x="11" y="11" width="148" height="40" stroke="#000" fill="#d5dcd2" stroke-width="1" />
+                <text x="85" y="39" font-size="20" text-anchor="middle" font-family="SimHei,STHeiti" fill="black">时间</text>
+                <text x="85" y="79" font-size="18" text-anchor="middle" fill="#000" stroke="#000" stroke-width="1">日期</text>
+                <rect x="11" y="90" width="75" height="40" stroke="#000" fill="#f29f5d" stroke-width="2" />
+                <text x="46" y="119" font-size="20" text-anchor="middle" fill="#000" stroke="#000" stroke-width="1"><</text>
+                <rect x="87" y="90" width="72" height="40" stroke="#000" fill="#6d7a71" stroke-width="2" />
+                <text x="125" y="119" font-size="20" text-anchor="middle" fill="#fff" stroke-width="2">></text>
+            </svg>
+        </div>
+
+        <div id="legend"></div>
+
+        <div id="infection_map">
+            <svg id="geo-chart"></svg>
+        </div>
+        
+        <div id="details_chart">
+        </div>
+    </body>
+
+
+    <script type="text/javascript">
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        /*  async 和 await ……………………………………………………？？？？？？ */
+
+        async function redraw() {
+            const province_colour = "rgb(25，25，112)"
+            
+            var WIDTH = 640;
+            var HEIGHT = 550;
+
+            const min_color = d3.rgb("#FF3030");
+            const max_color = d3.rgb("#000");
+            const projection = d3.geoMercator()
+            .center([95.15, 40.55])
+            .scale(WIDTH*1.0712)
+
+            const china = await d3.json("data/china_diaoyudao.json");
+
+            console.log(china);
+
+            const T_timeParse = d3.timeParse("%Y/%m/%d"); // d3.timeParse 为D3@5的用法
+            const T_projection = projection
+            const data = await d3.csv("data/dataZHUWEN02.csv", function (d) {
+                d.date = T_timeParse(d["时间"])
+                d.location = T_projection([d["坐标"].split(",")[0], d["坐标"].split(",")[1]])
+                return d;
+            });
+
+            console.log(data);
+
+//...new???…………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+            
+            const dates = Array(...new Set(data.map(d => d.date.getTime())))
+            let step = dates.length - 1
+            let step_date = dates[step]
+            let first_play = true
+
+            var formatTime = d3.timeFormat("%Y年%m月%d日");
+
+            const chart = async function () {
+                const width = WIDTH;
+                const height = HEIGHT;
+
+                const svg = d3.select("#geo-chart")
+                .style("width", WIDTH*2)
+                .style("height", HEIGHT*2)
+
+ 
+                const path = d3.geoPath().projection(projection);
+
+/* 绘制图例…………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………… */
+                
+            generateLegends()
+                
+            function generateLegends() {
+
+            const MAIN_COLOR = "#CDBA96"
+
+            const WIDTH = window.innerWidth/2;
+            const HEIGHT = window.innerHeight;
+            const HEIGHT_ratio = 1;
+
+
+            const MIN_COLOR = d3.rgb("25,25,112")
+            const MAX_COLOR = d3.rgb('25,25,112')//透明
+            
+            const x_start = 10
+            const x_end = x_start + 150 
+    
+
+            const svg = d3.select("#legend")
+                  .append("svg")
+                  .style("width", x_end + 40)
+                  .style("height", HEIGHT_ratio * 200)
+
+    // 线性图例color
+            const provinceColorScale = d3.scaleLinear()
+            .domain([1,10])
+            .range([MIN_COLOR, MAX_COLOR]);
+
+    // radiusScale
+            const rScale = d3.scaleLinear()
+            .domain([0, 30])
+            .range([0, 900])
+
+    //线性图例渐变rect
+            const defs = svg.append("defs");
+            const linearGradient = defs.append("linearGradient")
+                .attr("id","linearColor")
+                .attr("x1","0%")
+                .attr("y1","0%")
+                .attr("x2","100%")
+                .attr("y2","0%");
+
+            const stop1 = linearGradient.append("stop")
+                .attr("offset","0%")
+                .style("stop-color",MIN_COLOR.toString())
+                .style("stop-opacity","0");
+
+            const stop2 = linearGradient.append("stop")
+                .attr("offset","100%")
+                .style("stop-color",MAX_COLOR.toString())
+                .style("stop-opacity","1");
+
+    //加入一个rectangle
+            svg.append("rect")
+                .attr("x", x_start)
+                .attr("y", 30)
+                .attr("width", x_end - x_start)
+                .attr("height", 15 * HEIGHT_ratio)
+                .style("fill","url(#" + linearGradient.attr("id") + ")");
+
+            const svg_province_group = svg.append("g")
+            
+            svg_province_group.append("text")
+                        .text("该省疫情总数（件）")
+                        .attr("fill", "black")
+                        .attr("text-anchor", "start")
+                        .attr("transform","translate("+ (x_start + 5)+",+" + 20*HEIGHT_ratio +")")
+
+            svg_province_group.append("path")
+                        .attr("d", `M${x_start},30L${x_start},`+ 70*HEIGHT_ratio )
+                        .attr("stroke", "black")
+                        .attr("stroke-width", "1px")
+            svg_province_group.append("text")
+                        .text(0)
+                        .attr("fill", "black")
+                        .attr("text-anchor", "start")
+                        .attr("transform","translate("+ (x_start + 5)+ "," + 70*HEIGHT_ratio +")")
+            svg_province_group.append("path")
+                        .attr("d", `M${x_end},30L${x_end},`+ 70 * HEIGHT_ratio)
+                        .attr("stroke", "black")
+                        .attr("stroke-width", "1px")
+            svg_province_group.append("text")
+                        .text("10+")
+                        .attr("fill", "black")
+                        .attr("text-anchor", "end")
+                        .attr("transform","translate("+ (x_end - 5)+","+ 70*HEIGHT_ratio +")")
+        
+        const svg_circle_group = svg.append("g")
+        
+            svg_circle_group.append("text")
+                        .text("每起疫情死亡数（头）")
+                        .attr("fill", "black")
+                        .attr("text-anchor", "start")
+                        .attr("transform","translate("+ (x_start + 5)+"," + 110 * HEIGHT_ratio + ")")
+
+            svg_circle_group.append("circle")
+                        .attr("fill", MAIN_COLOR)
+                        .attr("r", 5)
+                        .attr("fill","red")
+                        .attr("opacity",0.8)
+                        .attr("transform","translate("+ (x_start + 30)+"," + 140 * HEIGHT_ratio + ")")
+        
+            svg_circle_group.append("text")
+                        .text(100)
+                        .attr("fill", "black")
+                        .attr("text-anchor", "middle")
+                        .attr("transform","translate("+ (x_start + 30)+"," + 180 * HEIGHT_ratio + ")")
+        
+            svg_circle_group.append("circle")
+                        .attr("fill", MAIN_COLOR)
+                        .attr("r", 10)
+                        .attr("fill","red")
+                        .attr("opacity",0.8)
+                        .attr("transform","translate("+ (x_start + 105)+"," + 140 * HEIGHT_ratio + ")")
+ 
+            svg_circle_group.append("text")
+                        .text(400)
+                        .attr("fill", "black")
+                        .attr("text-anchor", "middle")
+                        .attr("transform","translate("+ (x_start + 105)+"," + 180 * HEIGHT_ratio + ")") 
+
+
+        return svg.node()//……………………………………节点
+}
+        
+// 图例……………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+                const notice_information = svg.append("g")
+
+                         notice_information.append("text")
+                         .text("注：点击地图省份可查看具体疫情情况")
+                         .attr("fill", "black")
+                         .attr("text-anchor", "start")
+                         .attr("transform","translate("+ 250+"," + 550 + ")") 
+
+                // 设置 G_province省份
+                svg.append("g")
+                .attr("id", "G_province")
+
+                // 设置 G_location具体位置
+                svg.append("g")
+                .attr("id", "G_location")
+
+                svg.select("#G_province").selectAll("path")
+                .data(china.features)
+                .enter()
+                .append("path")
+                .attr("class", "province")
+                .attr("stroke", "#000")
+                .attr("stroke-opacity","0.05")
+                .attr("fill", "rgba(255,255,255)")
+                .attr("fill-opacity","0.5")
+                .attr("d", path)
+
+
+                // 逐渐加深省份颜色……………………………………………………………………
+                function increasePro(point) {
+                    const geoPro = china.features.filter(function (d) {
+                        return d3.geoContains(d , point)
+                    })
+                    svg.select("#G_province").append("path").data(geoPro)
+                    .attr("class", "province_increase")
+                    .attr("id", function(d) {
+                        return d.properties.name
+                    })
+                    .attr("stroke", "#87CEEB")
+                    .attr("stroke-width", 2)
+                    .attr("fill", province_colour).attr("fill-opacity","0.1")
+                    .attr("d", path)
+                }
+                
+                // details！！！………………………………………………………………………………
+                function setTagHtml(date) {
+                    let detail_tag_html_str =
+                        `<svg width="170" height="200" style="background:#fff0">
+                        <rect x=10 y=10 width="150" height="120" stroke="grey" stroke-width="3" style="fill:#fff9e6" />
+                        <rect x=11 y=11 width="148" height="40" stroke="grey" fill="#fff9e6" stroke-width="1" />
+                        <text x="85" y="39" font-size="20" text-anchor="middle" font-family="SimHei,STHeiti" "fill=" black">日期</text>
+                        <text x="85" y="79" font-size="18" text-anchor="middle" fill="#000" stroke="grey" stroke-width="1">${date}</text>
+                        <rect x=11 y=90 width="75" height="40" stroke="grey" fill="#fff9e6" stroke-width="2" id="prev_day"/>
+                        <text x="46" y="119" font-size="20" text-anchor="middle" fill="#000" stroke="grey" stroke-width="1" id="prev_day"> <- </text>
+                        <rect x=87 y=90 width="72" height="40" stroke="grey" fill="#fff9e6 stroke-width=" 2" id="next_day"/>
+                        <text x="125" y="119" font-size="20" text-anchor="middle" fill="#fff" stroke-width="2" id="next_day"> ->
+                        </text>
+                        </svg>`
+                        d3.select("#date_changeBox").html(detail_tag_html_str);
+                        d3.selectAll("#next_day").on("click",function(d,i) {
+                            if (step < dates.length - 1) {
+                                step_date = dates[step + 1]
+                                step = step + 1
+                            }
+                            drawCitiesBefore(step_date)
+                        })
+                        d3.selectAll("#prev_day").on("click",function(d,i) {
+                            if (step > 0) {
+                                step_date = dates[step - 1] || dates[0]
+                                step = step - 1
+                            }
+
+                            drawCitiesBefore(step_date)
+                        })
+                }
+
+                // current当天情况
+
+                        function drawCitiesBefore(cur_date) {
+                //首先 清空所有的城市和省份
+                        d3.selectAll(".province_increase").remove()
+                        d3.selectAll(".city-infected").remove()
+                //除去染色……………………………………………………………………………………………………………………
+                        setTagHtml(formatTime(cur_date))
+
+
+                    const g = d3.select("#G_location")
+                                .attr("fill", min_color)
+
+
+                    for (const d of data) {
+
+                        const compute_color = d3.interpolate(min_color,max_color)
+                        const computed_color = compute_color((d["死亡数（头）"] - 25)/400)
+                        let death = String(d["死亡数（头）"])
+
+                        const computed_radius = Math.min(Math.sqrt(death)/2,40)
+
+                        if (d.date < cur_date) {
+                            const circle = d3.selectAll("#circle_location"+ d["疫情序号"])
+                            .transition()
+                            .duration(300)
+                            .attr("class","circle_increase")
+                            .attr("fill-opacity", 0.8)
+                            .attr("stroke-opacity", 0.8)
+                            .attr("stroke-width", 0.5)
+                            .attr("fill", min_color)
+                            .attr("r", computed_radius)
+
+
+                        increasePro([d["坐标"].split(",")[0], d["坐标"].split(",")[1]]) //绘制疫情点的时候同时绘制相应的省份
+                        }
+                        if (d3.timeDay(d.date).getTime() === d3.timeDay(cur_date).getTime()) {
+                            const circle = g.append("circle")
+                            .datum(d)
+                            .attr("class", "city-infected") 
+                            .attr("id", "circle_location" + d["疫情序号"]) 
+                            .attr("transform", `translate(${d.location})`)
+                            .attr("fill-opacity", 1)
+                            .attr("stroke","white")
+                            .attr("stroke-opacity", 1)
+                            .attr("stroke-width", 0.5)
+                            .attr("fill", "#ff0000")
+                            .attr("r", first_play ? 0: computed_radius)
+
+                            increasePro([d["坐标"].split(",")[0], d["坐标"].split(",")[1]]) //绘制疫情点的时候同时绘制相应的省份
+                            if (first_play) {
+                                circle.transition()
+                                    .duration(300)
+                                    .attr("class","circle_increase")
+                                    .attr("stroke","white")
+                                    .attr("stroke-width", 1)
+                                    .attr("fill", min_color)
+                                    .attr("r", computed_radius)
+                            }
+                        }
+                        if (d.date > cur_date) {
+                            d3.selectAll("#circle_location"+d["疫情序号"]).remove()
+                        }
+                    }
+                    addInteraction()
+                }
+
+                
+                function removeCityHoverTag(d) {
+                    const svg = d3.select("#geo-chart")        
+                    svg.selectAll("#hove_" + d["疫情序号"]).transition().style("visibility","hidden").attr("fill-opacity","0.06")
+                }
+
+
+                /* 主图 */
+                const start_date = dates[0]
+                const end_date = dates[dates.length - 1]
+                const days = d3.timeDay.range(start_date - 86400 * 1000 * 2 ,end_date + 1, 1)
+                for (const day of days) {
+                    drawCitiesBefore(day)
+                    await sleep(100)
+                }
+                addInteraction()
+                function addInteraction() { 
+                // mouseover交互
+                    svg.selectAll(".city-infected")
+                    .on("mouseover", function (d, i) {
+                    })
+                    .on("mouseout", function (d, i) {
+                    })
+                    .on("click", function (d,i) {
+                        console.log(d)
+                        showDetailsTable(d["省份"], step_date)
+                        d3.select("#click").remove();
+                    })
+
+                    svg.selectAll(".province_increase")
+                        .on("mouseover", function (d, i){
+                        })
+                        .on("mouseout", function (d, i){
+                        })
+                        .on("click", function (d,i) {
+                        showDetailsTable(d.properties.name, step_date)
+
+                        d3.select("#click").remove();
+                        })
+                 }
+
+
+
+
+                first_play = false 
+            }()
+
+            /* 关闭按钮！！！ */
+
+            function setCloseButton() {
+                d3.select("#close_icon")
+                .on("mouseover", function (d, i) {
+                        d3.select("#close_icon svg")
+                })
+                .on("mouseout", function (d, i) {
+                        d3.select("#close_icon svg")
+                })
+                .on("click", function(d, i) {
+                        d3.select("#details_chart").html("")
+                        d3.selectAll(".province-selected").style("fill", province_colour).attr("fill-opacity","0.1").attr("class", "province_increase")
+                 })
+
+            }
+
+            // 当前省份的疫情
+            function showDetailsTable(province_name, before_date, cur_d3_dom) {
+                // remove previous selection
+                d3.selectAll(".province-selected")
+                  .style("fill", province_colour)
+                  .attr("fill-opacity","0.1")
+                  .attr("class", "province_increase");
+
+                d3.select("#" + province_name)
+                .transition()
+                .duration(300)
+                .style("fill", "#8B1A1A")
+                .attr("stroke-width",3)
+                .attr("fill-opacity", "1")
+                .attr("class", "province-selected");
+
+                const title = province_name
+
+                    let details_html = `
+                    <div id="close_icon" >
+                    <img src="img/close_button.png"  alt="关闭" />
+                    </div>
+                    <h2>${title}</h2>
+                    <table id="table_box" cellspacing="10">
+                    <tr>
+                    <th>日期</th>
+                    <th>地点</th> 
+                    <th>发病</th>
+                    <th>死亡</th> 
+                    <th>处理</th>
+                    </tr>
+                    `
+
+                    before_date = before_date || new Date(Date.now())
+
+                    for (const d of data) {
+                        if (province_name.includes(d["省份"]) && !(d.date > before_date)) {
+      
+                            const details_table = `
+                                <tr>
+                                <td scope="row" class="date">${formatTime(d.date)}</td>
+                                <td scope="row" class="loc">${d["显示地点"]}</td>
+                                <td>${d["发病数（头）"] || "不详" }</td>
+                                <td>${d["死亡数（头）"] || "不详" }</td>
+                                <td>${d["处理（头）"] || "不详" }</td>
+                                </tr>
+                                `
+                                details_html = details_html + details_table
+                        }
+                    }
+                details_html =  details_html + ` </table>
+                    `
+
+                d3.select("#details_chart").html(details_html)
+                setCloseButton()
+            }
+        }
+
+        redraw()
+
+    </script>
+
+</html>
