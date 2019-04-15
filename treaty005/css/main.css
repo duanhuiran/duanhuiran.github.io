@@ -215,8 +215,8 @@
   	}
 	.link {
 	  fill: none !important;
-	  stroke: orange !important;
-	  stroke-opacity: .1 !important;
+	  stroke: #c57900 !important;
+	  stroke-opacity: .2 !important;
 	}
 	.link:hover {
 	  stroke-opacity: .5 !important;
