@@ -340,31 +340,31 @@ function sankeychart() {
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) { 
         if(d.name == "投资贸易") {
-          return "#9F353A"; 
+          return "#904840"; 
         }else if (d.name == "经济") {
           return "#904840";
         }else if (d.name == "文化") {
-          return "#60373E";
+          return "#904840";
         }else if (d.name == "边界海洋") {
-          return "#1E88A8";
+          return "#904840";
         }else if (d.name == "其他") {
-          return "#BDC0BA";
+          return "grey";
         }else if (d.name == "交通运输") {
-          return "#373C38";
+          return "#904840";
         }else if (d.name == "司法协助") {
-          return "#268785";
+          return "#904840";
         }else if (d.name == "政治") {
-          return "#8D742A";
+          return "#904840";
         }else if (d.name == "领事") {
-          return "#572A3F";
+          return "#904840";
         }else if (d.name == "卫生") {
-          return "#FEDFE1";
+          return "#904840";
         }else if (d.name == "科技和知识产权") {
-          return "#0D5661";
+          return "#904840";
         }else if (d.name == "税收") {
-          return "#646A58";
+          return "#904840";
         }else if (d.name == "环境"){
-          return "#89916B";
+          return "#904840";
         }else if (d.name == "苏联"){
           return "grey";
         }else{
