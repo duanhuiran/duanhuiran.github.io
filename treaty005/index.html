@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!-- 这里用来设置全局变量 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="这里用来描述这个网页">
+	<!-- 以下为css -->
+	<link rel="stylesheet" href="" />
+	<link rel="stylesheet" href="css/main.css" />
+	<!-- 以下为js库 -->
+	<script src="scripts/ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.1.0/d3.js"></script>
+	<script src="scripts/sankey.js"></script>
+	<!-- jquery线上lib -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- for sort -->
+    <script src="scripts/isotope.pkgd.min.js"></script>
+	<title>七千外交条约：七十周年风云</title>
+	<style>
+		.icon img{
+			margin:0 auto;
+			width: 100px;
+			height: 100px;
+		}
+
+		.node rect {
+		  fill-opacity: .9;
+		  shape-rendering: crispEdges;
+		};
+		.node text {
+		  pointer-events: none;
+		  text-shadow: 0 1px 0 #fff;
+		}
+		.link {
+		  fill: none;
+		  stroke-opacity: .1;
+		  stroke: #666;
+		}
+		.link:hover {
+		  stroke-opacity: .5;
+		}
+	    .chart {
+          float: left;
+          padding-right: 8px;
+          padding-bottom: 8px;
+          padding-top:8px;
+          padding-left:8px;
+        }
+
+        .background {
+          fill: none;
+        }
+
+        .title {
+          font-size: 12px;
+        }
+
+        .axis line, .grid line {
+          stroke-width: .5px;
+          shape-rendering: crispEdges;
+          stroke: #fff;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        .axis path {
+          display: none;
+        }
+
+        .hidden {
+          display:none;
+          opacity: 0.0;
+        }
+
+        .label {
+            fill: steelblue;
+        }
+
+        .endpoint {
+            fill: #666;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<!-- 这是标题 -->
+		<div id="title">
+				<h1>七千外交条约<br>七十周年风云</h1>
+		</div>
+	</header>
+
+	<main>
+		<!-- 以下为第一部分内容：讲述阿蒙森的故事 -->
+		<section id="chapter0">
+			<div class="icon" >
+				<img src="img/象棋图标.png">
+			</div>
+			<p>1949年10月16日，当首任苏联驻华大使罗申将国书递交给时任中国主席毛泽东时，新中国的外交活动就此展开。同年12月25日，我国与朝鲜签下了第一条正式外交条约。外交条约——这一重要的历史文献记录着新中国外交70年来的历史变迁。我们从中华人民共和国条约数据库爬取了7000多条约数据，用其中的每一笔每一画来侧写出新中国外交70年的风云变幻。。</p>
+			<h2>70年来，中国的“朋友圈”如何发展？</h2>
+			<p>自1949年新中国成立以来，中国奉行“另起炉灶”、“打扫干净屋子再请客”“一边倒”的外交政策，不承认一切外国与中华民国政府或清政府签订的条约，重新建立与外国的外交关系。自此，新中国开始构建新的“朋友圈”。</p>
+			<p>根据“一边倒”的外交政策，自与苏联建交伊始，中国就广泛与社会主义国家建立外交关系，并且与之有较多的缔约关系。在此后几十年里，中国的外交关系主要集中在社会主义国家与第三世界国家。</p>
+			<div class="zoom">
+			<figure>
+					<img src="img/万隆会议.jpg" alt="" />
+					<figcaption>万隆会议</figcaption>
+				</figure></div>
+			<p>在1971年，正是因为第三世界国家的助力，中国成功恢复联合国合法席位，正式走入了国际视野。与此同时，中国还先后与日本、美国建立了外交关系。</p>
+		    <figure id="bubblechart">
+<!-- 		      <div id="toolbar">
+		        <a href="javascript:void(0)" id="all" class="button active">改革开放前</a>
+		        <a href="javascript:void(0)" id="year" class="button">改革开放后</a>
+		      </div> -->
+		      <svg id="vis" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="	http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 940 450" enable-background="new 0 0 940 450" xml:space="preserve" preserveAspectRatio="xMidYMid slice"></svg>
+		    </figure>
+    		<p id="trigger">当时间进程来到1978年这个节点，中国开始实行“改革开放”政策，并提出“坚持独立自主的和平外交政策”。至此，中国开始超越社会制度和意识形态，广泛与世界各国建立和发展外交关系，国家间的缔约数量不断增多，且各类外交条约也并不像“改革开放”前一样大量集中在一些社会主义国家。20世纪80年代末90年代初，中国外交在东欧剧变、苏联解体、两极格局瓦解等一系列事件的影响下，中国的“朋友圈”范围也随之拓展。</p>
+    		<div class="zoom">
+				<figure>
+					<img src="img/改革开放.jpg" alt="" />
+					<figcaption>改革开放</figcaption>
+				</figure></div>
+			<p>21世纪钟声敲响后的一年，中国加入WTO组织，与世界各国进一步发展外交关系。2013年，中国提出“一带一路”倡议，中国的外交事业再一次进入了一个新的发展阶段。</p>
+
+			<div class="zoom">
+				<figure>
+					<img src="img/WTO.jpg" alt="" />
+					<figcaption>中国加入WTO</figcaption>
+				</figure></div>
+
+			<blockquote id="controler1">
+			</blockquote>
+		</section>
+
+		<section id="chapter2">
+			<div class="icon" >
+				<img src="img/象棋2.png">
+			</div>
+			<h2>条约涉及的外交领域如何变化？</h2>
+			<div>
+            	<figure id="mutiplevis" class="clearfix" style="max-width:700px"></figure>
+		    </div>
+			<p>投资贸易、经济、文化、政治、卫生等领域一直是中国与他国缔约领域中的重要部分。而图中一些线段的转折点勾勒出了中国外交史变迁的重要节点。</p>
+			<p>在投资贸易领域，其占比在1978年左右逐年下滑。专家分析，在“改革开放”以前，中国更需要利用政府力量签订外交条约来与国际市场建立贸易联系、促进贸易发展；而在“改革开放”之后，中国企业获得了自行与国际市场进行市场经济活动的权利，因此，政府间的投资贸易条约逐渐减少。</p>
+			<p>在领事领域，1997年香港回归中国以后，领事条约数量激增，各类相关的领事关系需要更新与重构。自20世纪末以来，恐怖活动愈加猖獗，因此在国际反恐和打击犯罪领域，缔约数量的增加表明中国在此方面亦没有缺位。</p>
+			<div class="zoom">
+				<figure>
+					<img src="img/香港回归.jpg" alt="" />
+					<figcaption>香港回归</figcaption>
+				</figure></div>
+			<p>中国国际战略研究所副所长苏晓晖表示，“从1949年到2019年，与中国缔结条约国家数量的增加体现了中国对外交往和朋友圈的扩大，而条约领域的多样性趋势也显示了中国的国际合作从前期着重双边关系定位往经济、人文、卫生和科技等多方向全方位发展。”</p>
+			<p>中国的对外合作领域在经历了经贸、政治互信的合作之后，向卫生、文化、人权、反恐和知识产权方向的延伸。这表明中国的对外交往不仅是横向的扩大，也在合作方式上不断深入。尤其是在1978年中国开始实施改革开放后，各类合作条约的占比逐渐趋近。</p>
+		</section>
+
+		<section id="chapter3">
+			<div class="icon" >
+				<img src="img/象棋3.png">
+			</div>
+			<h2>70年来，各领域的条约都分布在哪些国家？</h2>
+			<figure id="sankeychart" >
+		      <svg id="sankeyvis" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="	http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 900" enable-background="new 0 0 1000 900" xml:space="preserve" preserveAspectRatio="xMidYMid slice"></svg>
+		    </figure>
+			<p>“我们可以从数据上发现国家间的相互依存是一种现实现象，各国日益相互依存、命运与共，越来越成为你中有我、我中有你的命运共同体。而俄罗斯是与中国签约数量最多的国家，且在政治领域条约最多，政治互信有利于展开其他各个领域的合作。”</p>
+			<p>从条约中的历史，我们亦可以展望未来。苏晓辉称，近年来，由于“中美贸易战”的相关信息，不乏对中美关系的唱衰声音，但从中美之间签署条约数量的历史发展来看，主张中美脱钩是不现实的。</p>
+
+		</section>
+
+<!-- 		<section id="chapter4">
+			<h2>结语</h2>
+			<p>呈现内容进行专家采访，给出一些与Part.I / Part.II数据及背景部分的相关解释与评论
+			呈现形式：文字</p>
+		</section> -->
+	
+	</main>
+
+	<!-- 以下为footer，需修改CSS样式 -->
+	<footer>
+		<div id="credit">
+			<p>作者：孙逸轩&nbsp;段辉然&nbsp;赵红&nbsp;马佳昆</p>
+		</div>
+		<div id="credit">
+			<p>指导：黄志敏&nbsp;方洁&nbsp;霍默静</p>
+		</div>
+		<div id="source">
+			<p style="font-weight:500">数据来源:中华人民共和国外交部条约数据库</p>
+		</div>
+		<div>
+			<p id="copyright">&#169;中国传媒大学新闻学院数据新闻专业,2019</p>
+		</div>
+	</footer>
+	<!-- 下列代码为显示控制代码 -->
+	<script src="scripts/bubble.js"></script>
+	<script src="scripts/tooltip.js"></script>
+</body>
+</html>
