@@ -326,9 +326,9 @@
 				max-width: 470px;
 				margin: 1.5rem auto;
 			}
-				figure img {
+/*				figure img {
 					width: 100%;
-				}
+				}*/
 
 		#mapsvg {
 			background: #334 center center no-repeat;
@@ -493,9 +493,9 @@
 			figure.big img {
 				cursor: initial !important;
 			}
-		figure img {
+/*		figure img {
 			width: 100%;
-		}
+		}*/
 		figure figcaption,
 		.scheme .caption {
 			font-family: 'proxima-nova', sans-serif;
