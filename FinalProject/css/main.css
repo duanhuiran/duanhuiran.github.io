@@ -303,7 +303,7 @@
 				margin: 1.5rem auto;
 			}
 				figure img {
-					/* width: 100%; */
+					width: 100%;
 				}
 
 		#mapsvg {
@@ -470,7 +470,7 @@
 				cursor: initial !important;
 			}
 		figure img {
-			/* width: 100%; */
+			width: 100%;
 		}
 		figure figcaption,
 		.scheme .caption {
