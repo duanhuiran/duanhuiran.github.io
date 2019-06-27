@@ -380,7 +380,8 @@
                         </text>
                         </svg>`
                         d3.select("#date_changeBox").html(detail_tag_html_str);
-                        d3.selectAll("#next_day").on("click",function(d,i) {
+                        d3.selectAll("#next_day")
+                        .on("click",function(d,i) {
                             if (step < dates.length - 1) {
                                 step_date = dates[step + 1]
                                 step = step + 1

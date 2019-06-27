@@ -297,7 +297,7 @@ function sankeychart() {
   var path = sankey.link();
   console.log(units);
   // load the data
-  d3.json("data/country_type.json", function(error, graph) {
+  d3.json("data/country_type02.json", function(error, graph) {
   var nodeMap = {};
   graph.nodes.forEach(function(x) { nodeMap[x.name] = x; });
   graph.links = graph.links.map(function(x) {
@@ -339,31 +339,33 @@ function sankeychart() {
       .attr("height", function(d) { return d.dy; })
       .attr("width", sankey.nodeWidth())
       .style("fill", function(d) { 
-        if(d.name == "投资贸易") {
+        if(d.name == "边界海洋") {
           return "#904840"; 
+        }else if (d.name == "环境") {
+          return "#904840";
+        }else if (d.name == "交通运输") {
+          return "#904840";
         }else if (d.name == "经济") {
-          return "#904840";
-        }else if (d.name == "文化") {
-          return "#904840";
-        }else if (d.name == "边界海洋") {
           return "#904840";
         }else if (d.name == "其他") {
           return "grey";
-        }else if (d.name == "交通运输") {
-          return "#904840";
-        }else if (d.name == "司法协助") {
-          return "#904840";
-        }else if (d.name == "政治") {
+        }else if (d.name == "科技和知识产权") {
           return "#904840";
         }else if (d.name == "领事") {
           return "#904840";
-        }else if (d.name == "卫生") {
-          return "#904840";
-        }else if (d.name == "科技和知识产权") {
+        }else if (d.name == "农林") {
           return "#904840";
         }else if (d.name == "税收") {
           return "#904840";
-        }else if (d.name == "环境"){
+        }else if (d.name == "通讯") {
+          return "#904840";
+        }else if (d.name == "投资贸易") {
+          return "#904840";
+        }else if (d.name == "卫生") {
+          return "#904840";
+        }else if (d.name == "文化"){
+          return "#904840";
+        }else if (d.name == "政治"){
           return "#904840";
         }else if (d.name == "苏联"){
           return "grey";
@@ -399,7 +401,7 @@ function sankeychart() {
 function mutiplechart(){
   console.log("mutiplechart")
 //完成基础设置 
-  var fullwidth = 200,
+  var fullwidth = 225,
       fullheight = 180;
 
   var margin = {top: 10, right: 10, bottom: 80, left: 40},
@@ -410,7 +412,7 @@ function mutiplechart(){
   var formatDate = d3.timeFormat("%Y");
 
   var xScale = d3.scaleTime()
-      .range([0, width])
+      .range([0, width-10])
 
   var yScale = d3.scaleLinear()
       .range([height, 0])
