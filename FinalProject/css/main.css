@@ -1,29 +1,4 @@
 /* Common ------------------------------------------------------------------ */
-
-.preloader{
-	position: absolute;
-	left: 0;
-	right:0;
-	top: 0;
-	bottom: 0;
-}
-
-.preloader #rushPee{
-	position: absolute;
-	width: 20%;
-	height: auto;
-	left: 40%;
-	top: 20%;
-}
-
-.preloader #seeking{
-	position: absolute;
-	width: 40%;
-	height: auto;
-	left: 33%;
-	top: 60%;
-}
-
 	html, body, div, span, applet, object, svg, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, burger, nav, output, ruby, section, summary, time, mark, audio, video, {
 		margin: 0;
 		padding: 0;
@@ -100,55 +75,56 @@
 		position: relative;
 		animation: splash 2s forwards ease-out;
 	}
-		header #title {
-			background: transparent url("../img/title.jpg") center center no-repeat;
-			background-size: cover;
-			background-position-x: 45%;
-			display: flex;
-			flex-flow: column;
-			align-items: center;
-			justify-content: center;
-			min-height: calc(100vh - 10rem);
-			padding: 5rem 0;
-		}
-			header #title h1 {
-				font-size: 12.6vmin;
-				line-height: 12.6vmin;
-				letter-spacing: 2.1vmin;
-				color: #fff;
-				text-shadow: 0 1px 3px rgba(0, 0, 26, .5);
-				opacity: 0;
-				width: calc(100% - 40px);
-				padding-top: 100px;
-				animation: splash 3s 1s forwards ease-out;
-			}
-				header #title h1 span {
-					font-weight: 700;
-					font-size: 4vmin;
-					line-height: 5vmin;
-					letter-spacing: 1.5vmin;
-					display: block;
-					margin-top: 3vmin;
-				}
-		header #lead {
-			background: #334 url("../img/horizon.svg") center bottom repeat-x;
-			background-size: 1800px auto;
-			display: flex;
-			align-items: center;
-			height: calc(100vh - 10rem);
-			padding: 5rem 0;
-		}
-			header #lead p {
-				font-weight: 700;
-				font-size: 1rem;
-				line-height: 1.5rem;
-				letter-spacing: 1px;
-				color: #fff;
-				text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
-				width: calc(100% - 40px);
-				max-width: 715px;
-				margin: 0 auto;
-			}
+	header #title {
+		background: transparent url("../img/title.jpg") center center no-repeat;
+		background-size: cover;
+		background-position-x: 45%;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		min-height: calc(100vh - 10rem);
+		padding: 5rem 0;
+	}
+	header #title h1 {
+		font-size: 12.6vmin;
+		line-height: 12.6vmin;
+		letter-spacing: 2.1vmin;
+		color: #fff;
+		text-shadow: 0 1px 3px rgba(0, 0, 26, .5);
+		opacity: 0;
+		width: calc(100% - 40px);
+		padding-top: 100px;
+		animation: splash 3s 1s forwards ease-out;
+	}
+	header #title h1 span {
+		font-weight: 700;
+		font-size: 4vmin;
+		line-height: 5vmin;
+		letter-spacing: 1.5vmin;
+		display: block;
+		margin-top: 3vmin;
+	}
+	header #lead {
+		background: #334 url("../img/horizon.svg") center bottom repeat-x;
+		background-size: 1800px auto;
+		display: flex;
+		align-items: center;
+		height: calc(100vh - 10rem);
+		padding: 5rem 0;
+	}
+	header #lead p {
+			font-weight: 700;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			letter-spacing: 1px;
+			color: #fff;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+			width: calc(100% - 40px);
+			max-width: 715px;
+			margin: 0 auto;
+	}
+	/*适配*/
 	@media (min-width: 1025px) {
 		header {
 			background: transparent url("../img/title.jpg") center center no-repeat;
@@ -326,9 +302,9 @@
 				max-width: 470px;
 				margin: 1.5rem auto;
 			}
-/*				figure img {
-					width: 100%;
-				}*/
+				figure img {
+					/* width: 100%; */
+				}
 
 		#mapsvg {
 			background: #334 center center no-repeat;
@@ -493,9 +469,9 @@
 			figure.big img {
 				cursor: initial !important;
 			}
-/*		figure img {
-			width: 100%;
-		}*/
+		figure img {
+			/* width: 100%; */
+		}
 		figure figcaption,
 		.scheme .caption {
 			font-family: 'proxima-nova', sans-serif;
@@ -982,7 +958,6 @@
 	.gap {
 		padding-top: 3rem;
 		}
-
-	.dots {
+	.dots:hover{
 		cursor: pointer;
-				}
+	}
