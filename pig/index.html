@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content="width=750, user-scalable=no, minimal-ui"/>
+    <title>adobeAn导出为spriteSheet演示</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="dist/cssSprite.min.js"></script>
+    <script src="dist/ScrollMagic.min.js"></script>
+</head>
+<body>
+<div class="winterpig">
+    <div id="hunger" class="hunger"></div>
+    <div id="eat" class="eat"></div>
+    <div id="full" class="full"></div>
+</div>
+<div class="feed">
+    <div class="star"></div>
+    <div class="txt">喂我</div>
+</div>
+
+<script>
+
+//…………………………………………………帧动画
+    var hungerSprite = new CssSprite({
+        target:'#hunger',
+        frames: [[0,0,336,429],[336,0,336,429],[672,0,336,429],[0,429,336,429],[336,429,336,429]],
+        animations:{
+            hunger:{
+                frames:CssSprite.createAnimations(0,4),
+                next:'hunger'
+            }
+        }
+    })
+
+    var eatSprite = new CssSprite({
+        target:'#eat',
+        paused:true,
+        loop:1,
+        frames: [[2560,6462,1280,718],[1280,6462,1280,718],[0,6462,1280,718],[2560,5744,1280,718],[0,6462,1280,718],[1280,5744,1280,718],[0,5744,1280,718],[2560,5026,1280,718],[1280,5026,1280,718],[0,5026,1280,718],[2560,4308,1280,718],[1280,4308,1280,718],[0,4308,1280,718],[2560,3590,1280,718],[1280,3590,1280,718],[0,3590,1280,718],[2560,2872,1280,718],[1280,2872,1280,718],[0,2872,1280,718],[2560,2154,1280,718],[1280,2154,1280,718],[0,2154,1280,718],[2560,1436,1280,718],[1280,1436,1280,718],[0,1436,1280,718],[2560,718,1280,718],[1280,718,1280,718],[0,718,1280,718],[2560,0,1280,718],[1280,0,1280,718],[0,0,1280,718]],
+        animationend:function () {
+            this.target.style.display = 'none';
+            fullSprite.target.style.display = 'block';
+            fullSprite.gotoAndPlay('hunger');
+        }
+    })
+
+    var fullSprite = new CssSprite({
+        target:'#full',
+        paused:true,
+        frames: [[0,0,1280,720,0,-207.05,215.1]],
+        animations:{
+            full:{
+                frames:CssSprite.createAnimations(0,0),
+                duration:3000,
+                next:'full'
+            }
+        }
+    })
+
+    var starSprite = new CssSprite({
+        target:'.star',
+        frames: [[0,0,118,92,0,-45.1,-1170.4],[118,0,118,92,0,-45.1,-1170.4],[236,0,118,92,0,-45.1,-1170.4],[354,0,118,92,0,-45.1,-1170.4],[0,92,118,92,0,-45.1,-1170.4],[118,92,118,92,0,-45.1,-1170.4],[236,92,118,92,0,-45.1,-1170.4],[354,92,118,92,0,-45.1,-1170.4],[0,184,118,92,0,-45.1,-1170.4],[118,184,118,92,0,-45.1,-1170.4],[236,184,118,92,0,-45.1,-1170.4],[354,184,118,92,0,-45.1,-1170.4],[0,276,118,92,0,-45.1,-1170.4],[118,276,118,92,0,-45.1,-1170.4],[236,276,118,92,0,-45.1,-1170.4],[354,276,118,92,0,-45.1,-1170.4],[0,368,118,92,0,-45.1,-1170.4],[118,368,118,92,0,-45.1,-1170.4],[236,368,118,92,0,-45.1,-1170.4],[354,368,118,92,0,-45.1,-1170.4],[0,460,118,92,0,-45.1,-1170.4],[118,460,118,92,0,-45.1,-1170.4],[236,460,118,92,0,-45.1,-1170.4],[354,460,118,92,0,-45.1,-1170.4],[0,552,118,92,0,-45.1,-1170.4],[118,552,118,92,0,-45.1,-1170.4],[236,552,118,92,0,-45.1,-1170.4],[354,552,118,92,0,-45.1,-1170.4],[0,644,118,92,0,-45.1,-1170.4],[118,644,118,92,0,-45.1,-1170.4],[236,644,118,92,0,-45.1,-1170.4]],
+        animations:{
+            star:{
+                frames:CssSprite.createAnimations(0,30),
+                next:'star',
+                speed:1.2
+            }
+        }
+    })
+
+    document.querySelector('.feed').addEventListener('click',function () {
+        if(fullSprite.target.style.display == 'block'){
+            fullSprite.target.style.display = 'none';
+            fullSprite.stop();
+            eatSprite.target.style.display = 'block';
+        }
+
+        hungerSprite.stop();
+        hungerSprite.target.style.display = 'none';
+
+        eatSprite.target.style.display = 'block';
+        eatSprite.play();
+    })
+
+</script>
+</body>
+</html>

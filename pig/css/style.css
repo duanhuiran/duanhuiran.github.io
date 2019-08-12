@@ -1,0 +1,67 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+
+    background-size: contain;
+    position: relative;
+}
+
+.winterpig{
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    left:0;
+}
+
+.winterpig .hunger{
+    background: url(../img/winterpig_hunger.png) no-repeat;
+    width: 336px;
+    height: 429px;
+    position: absolute;
+    top: 0;
+    left: 200px;
+}
+
+.winterpig .eat{
+    background: url(../img/yanshi.png) no-repeat;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.winterpig .full{
+    background: url(../img/stop.png) no-repeat;
+    width: 1280px;
+    height: 720px;
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+.feed{
+    background: url(../img/feed.png);
+    width: 100px;
+    height: 101px;
+    position: absolute;
+    bottom: 70px;
+    left: 70px;
+}
+
+.feed .star{
+    background: url(../img/star.png) no-repeat;
+    width: 118px;
+    height: 92px;
+}
+
+.feed .txt{
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
