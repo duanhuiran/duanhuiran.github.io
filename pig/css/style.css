@@ -6,7 +6,7 @@ html,body{
 }
 
 body{
-
+    background-color: #FF9577;
     background-size: contain;
     position: relative;
 }
@@ -28,18 +28,18 @@ body{
 }
 
 .winterpig .eat{
-    background: url(../img/yanshi.png) no-repeat;
+    background: url(../img/yanshi.jpg) no-repeat;
     width: 1280px;
-    height: 720px;
+    height: 718px;
     position: absolute;
     top: 0;
     display: none;
 }
 
 .winterpig .full{
-    background: url(../img/动画.svg) no-repeat;
-    width: 1280px;
-    height: 720px;
+    background: url(../img/stop.png) no-repeat;
+    width: 1285px;
+    height: 718px;
     position: absolute;
     background-size: 100% 100%;
     bottom: 0;
@@ -49,7 +49,7 @@ body{
 .feed{
     background: url(../img/feed.png);
     width: 100px;
-    height: 101px;
+    height: 100px;
     position: absolute;
     bottom: 70px;
     left: 70px;
