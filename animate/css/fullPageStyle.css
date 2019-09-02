@@ -253,11 +253,13 @@ figure figcaption,
 
 .surface{
 
-	position: relative;
+	position: absolute;
     display: flex;           
     width: 1280px;
     height: 720px;
     z-index:999;
+    margin-top:100px;
+
 
 }
 
@@ -265,8 +267,8 @@ figure figcaption,
 	position: relative;
     display: flex;           
     width: 1280px;
-    height: 100vh;
-    z-index:999;
+    height: 720px;
+    /*z-index:999;*/
 
 }
 

@@ -1,0 +1,172 @@
+<!DOCTYPE html>  
+    <html>  
+    <head>  
+    <meta charset="UTF-8">  
+    <title>点亮图层</title>  
+    <!-- 新 Bootstrap 核心 CSS 文件 -->  
+    <link rel="stylesheet" href="css/lighter.css">  
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->  
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">  
+    </head>  
+    <body>  
+        <!-- overlay为底层图片 -->
+        <canvas id="canvas-overlay"></canvas>
+
+        <!-- lines为上层图片 -->
+        <canvas id="canvas-lines"></canvas>
+
+        <script type="text/javascript">  
+
+// 在overlay上画图
+var canvas = document.querySelector('#canvas-overlay');
+var canvasContext = canvas.getContext('2d');
+
+// 在lines上画图 
+var lineCanvas = document.querySelector('#canvas-lines');
+var lineCanvasContext = lineCanvas.getContext('2d');
+
+//points的存活时间？
+var pointLifetime = 500;
+
+//points为一个数组
+var points = [];
+
+//FILL CANVAS
+// canvasContext.fillStyle = "rgba(0, 0, 0, 0.5)";
+// canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+//INIT
+function init() {
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('touchmove', onMouseMove);  
+    window.addEventListener('resize', resizeCanvases);
+    resizeCanvases();
+    tick();
+
+}
+
+init();
+
+//RESIZE CANVAS
+function resizeCanvases() {
+    canvas.width = lineCanvas.width = window.innerWidth;
+    canvas.height = lineCanvas.height = window.innerHeight;
+}
+
+event.changedTouches[0].clientX
+
+//鼠标移动时，推入points数组，包含有记录出生时间，出生位置
+function onMouseMove(event) {
+    points.push({
+        time: Date.now(),
+        x: event.clientX || event.changedTouches[0].clientX,
+        y: event.clientY || event.changedTouches[0].clientY+850
+    });
+    // console.log(points);
+}
+
+function tick() {
+    // Remove old points
+    points = points.filter(function(point) {
+
+//过滤存活时间只剩设定的pointLifetime的points。
+        var age = Date.now() - point.time;
+        return age < pointLifetime;
+    });
+
+    drawLineCanvas();
+    drawImageCanvas();
+
+
+
+//重复执行tick这个函数    
+    requestAnimationFrame(tick);
+
+    //setTimeout(() => {
+    //tick();
+    //}, 1000 / 60);
+}
+
+function drawLineCanvas() {
+    var minimumLineWidth = 70;
+    var maximumLineWidth = 140;
+    var lineWidthRange = maximumLineWidth - minimumLineWidth;
+    var maximumSpeed = 70;
+
+//clearRect--->清空元素内部某一部分的像素(慢慢清空自己画的点)
+    lineCanvasContext.clearRect(0, 0, lineCanvas.width, lineCanvas.height);
+
+//round---> 向线条的每个末端添加圆形线帽。
+    lineCanvasContext.lineCap = 'round';
+
+//shadowBlur---> 阴影的模糊级数
+    lineCanvasContext.shadowBlur = 70;
+    lineCanvasContext.shadowColor = '#000';
+
+    for (var i = 1; i < points.length; i++) {
+
+        // console.log(points);
+        var point = points[i];
+        // console.log(point);
+
+        //前一个point
+        var previousPoint = points[i - 1];
+
+        // Change line width based on speed
+
+        //获取两点之间的距离
+        var distance = getDistanceBetween(point, previousPoint);
+
+        var speed = Math.max(0, Math.min(maximumSpeed, distance));
+
+        // console.log(speed);
+
+        var percentageLineWidth = (maximumSpeed - speed) / maximumSpeed;
+        lineCanvasContext.lineWidth = minimumLineWidth + percentageLineWidth * lineWidthRange;
+
+        // Fade points as they age
+        var age = Date.now() - point.time;
+
+        // console.log(age);
+
+        var opacity = (pointLifetime - age) / pointLifetime;
+        lineCanvasContext.strokeStyle = 'rgba(0, 0, 0, ' + opacity + ')';
+
+
+
+        lineCanvasContext.beginPath();
+        lineCanvasContext.moveTo(previousPoint.x, previousPoint.y);
+        lineCanvasContext.lineTo(point.x, point.y);
+        lineCanvasContext.stroke();
+    }
+}
+
+function getDistanceBetween(a, b) {
+    return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
+}
+
+function drawImageCanvas() {
+    canvasContext.globalCompositeOperation = 'source-over';
+    canvasContext.save();
+
+    var img = new Image();
+    img.src = "img/hungerGray.png";
+    canvasContext.drawImage(img,0,0,canvas.width,canvas.height);
+
+    console.log(canvas.width);
+
+
+    // canvasContext.fillStyle = "rgb(0, 0, 0)";
+    // canvasContext.globalAlpha = 0.009;
+    // canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+
+    canvasContext.restore();
+    canvasContext.globalCompositeOperation = 'destination-out';
+    canvasContext.drawImage(lineCanvas, 0, 0);
+
+
+}
+        </script>  
+    </body>  
+    </html> 

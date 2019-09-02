@@ -73,7 +73,7 @@ $(function(){
     		'transform':'scale(' + d + ')',
     		'left': b + 'px',
     		'top': '50%',
-    		'margin-top': -h + 'px'
+    		'margin-top': h + 'px'
     	}
     );
 
