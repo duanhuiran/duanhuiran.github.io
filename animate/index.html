@@ -1,266 +1,733 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+    
+    <head>
+        <meta charset="utf-8" />
 
-<head>
+        <title>Chinese Animated Films in 70 Years</title>
+        <!-- <link rel="stylesheet" href="css/jquery.fullPage.css">
+        <link rel="stylesheet" href="css/fullPageStyle.css"> -->
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery.slimscroll.min.js"></script>
+        <script src="js/jquery.fullPage.min.js"></script>
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/cssSprite.min.js"></script>
+        <script>var setStyle = function(cssArr) {
+                var i = 0,
+                len = cssArr.length;
+                for (i; i < len; i++) {
+                    document.write('<link rel="stylesheet" href="' + cssArr[i] + '">');
+                }
+            };
 
-<meta charset="utf-8">
-<title>Chinese animate in 70 years</title>
-<link rel="stylesheet" href="css/jquery.fullPage.css">
-<link rel="stylesheet" href="css/fullPageStyle.css">
+            // 判断是否移动端
+            function goPAGE() {
+                if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+                    // window.location.href="index_M.html";
+                    //判断访问环境是 移动端 则加载以下样式
+                    setStyle(['css/fullPageStyle_M.css', 'css/jquery.fullPage.css']);
 
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/jquery.fullPage.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/cssSprite.min.js"></script>
+                }
+                else {
+                    // window.location.href="index_M.html"; 
+                    setStyle(['css/fullPageStyle.css', 'css/jquery.fullPage.css']);
 
-</head>
+                }
+            }
 
-<body>
+            goPAGE();</script>
+        <!-- 统计js -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-89339688-1"></script>
+        <script>window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-89339688-1');</script>
+        <script>window.onload = function() {
+                function isIE() {
+                    ua = navigator.userAgent;
+                    /* MSIE used to detect old browsers and Trident used to newer ones*/
+                    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+
+                    return is_ie;
+                }
+                /* Create an alert to show if the browser is IE or not */
+                if (isIE()) {
+                    document.getElementById("IE-alert").style.display = "block";
+                } else {
+                    //do nothing.
+                }
+
+                //console.log(document.getElementById("IE-alert"));
+            };</script>
+
+    <script type="text/javascript">
+     var u = navigator.userAgent;
+     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+      // alert('是否是Android：'+isAndroid);
+      //alert('是否是iOS：'+isiOS);
+    </script>
+
+    </head>
+    
+    <body>
+
+<div class="loading">
+    <div class="socket">
+        <div class="gel center-gel">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c1 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c2 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c3 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c4 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c5 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c6 r1">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        
+        <div class="gel c7 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        
+        <div class="gel c8 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c9 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c10 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c11 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c12 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c13 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c14 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c15 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c16 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c17 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c18 r2">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c19 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c20 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c21 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c22 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c23 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c24 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c25 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c26 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c28 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c29 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c30 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c31 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c32 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c33 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c34 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c35 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c36 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c37 r3">
+            <div class="hex-brick h1"></div>
+            <div class="hex-brick h2"></div>
+            <div class="hex-brick h3"></div>
+        </div>
+
+    </div>
+    <div class="loadingTest">
+    <p>For a more detailed view, please visit the site on a larger screeen.</p>
+    </div>
+</div>
+
+        <div id="IE-alert">
+            <div id="cgtnlogo0" class="CGTNlogo"></div>
+            <img src="img/CGTN.png" alt="CGTN" />
+            <div class="IE-content">
+                <p class="IE-upper">This project does not support this browser.</p>
+                <p>To continue using this page, you will need to use an alternative browser. We suggest one of the options below:</p>
+                <ul>
+                    <li>Google Chrome</li>
+                    <li>Mozilla Firefox</li>
+                    <li>Safari</li></ul>
+                <p>
+                </p>
+            </div>
+        </div>
 
 
 
-	
-	
-
-<div id = "interactive" class="interactive">
-	<div id="bgPic" class="bgPic">
-
-                    
-                <div id="surface" class="surface">    
+        <div id="interactive" class="interactive">
+            <div id="CGTNlogo1" class="CGTNlogo">
+                <img src="img/CGTN.png" alt="CGTN" /></div>
+            <div id="CGTNlogo2" class="CGTNlogo">
+                <img src="img/CGTN金.png" alt="CGTN" /></div>
+            <div id="info" class="info">
+                <img src="img/info.png" alt="info" /></div>
+            <!-- -->
+            <div id="bgPic" class="bgPic">
+                <div id="surface" class="surface">
                     <div id="surface-1" class="surface-1">
 
-                    	<div id="Title" class="Title">
-                    	<img src="img/titleray.png"  alt="Chinese animate in 70 years"/>
-                		</div>
+                        <div id="cast" class="cast">
+                            <div id="close" class="close">
+                                <img src="img/close.png" alt="close" /></div>
+                            <div id="Note" class="Note">
+                                <h2>*Note</h2>
+                                <p>Data sources: Douban (Douban.com) and ChinaBoxOffice (Cbooo.cn)
+                                    <br />Data is limited to Chinese animated films (including co-productions) released in the Chinese Mainland from October 1949 to August 2019.
+                                    <br />Films must be over 40 minutes long and have animation in at least 75 percent of their running time, or have at least 40 minutes of animation in total.
+                                    <br />Disclaimer: All movie posters and animation characters are copyright to their respective owners. For inquiries please contact c_lab@cgtn.com.</p></div>
+                            <div id="castLine" class="castLine"></div>
+                            <div id="Credit" class="Credit">
+                                <h2>Credit</h2>
+                                <p>Supervisor: Jiang Heping. Managing Director: Zhang Shilei. Project Manager: Si Nan. Multimedia Producers: Xu Jiye, Zhou Rui. Interactive Designer: Li Yixiao. Interactive Developers: Duan Huiran (Intern), Bi Jiankun. Chief Editor: Chen Ran. Copy Editor: Nadim Diab. Copywriter: Wu Lushi. Data Editors &amp; Visualization: Zhang Yujia, Li Yixiao, Zhou Rui, Duan Huiran (Intern)</p>
+                            </div>
+                        </div>
+                        <div id="mNote" class="mNote">
+                            <p>*Note: Rankings of Chinese animated film box office in Chinese Mainland.</p>
+                        </div>
+                        <div id="Title" class="Title">
+                            <img id="titleray_PC" src="img/titleray.png" alt="Chinese animate in 70 years" />
+                            <img id="titleray_M" src="img/titleray_M.png" alt="Chinese animate in 70 years" /></div>
+                        <div id="Xline" class="Xline">
+                            <img src="img/线.png" alt="line" /></div>
+                        <div id="Mouse" class="Mouse">
+                            <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50%" cy="10%" r="2.5" fill="#fff4d4" /></svg>
+                        </div>
+                        <div id="Intro" class="Intro">
+                            <p>Chinese animated film &quot;Ne Zha&quot; has shattered records since its domestic debut on July 26, becoming
+                                <span style="font-weight: 900">the second highest-grossing</span> film in the Chinese Mainland by August 31.</p>
+                            <p style="margin:1px 0">It is loosely based on the novel &quot;Investiture of the Gods&quot; and the latest exhibit in a long-running trend of using Intellectual Property (IP) in China's animation industry.</p></div>
+                        <div id="timeLine" class="timeLine">
+                            <img src="img/timelineray.png" alt="" /></div>
+                        <div id="timeLine_M" class="timeLine_M">
+                            <img src="img/timelineray_M.png" alt="" /></div>
+                        <div id="screen2" class="screen2"></div>
+                        <div id="screen3" class="screen3"></div>
+                        <div id="screen4" class="screen4"></div>
+                        <div id="screen5" class="screen5"></div>
+                        <div id="funFacts1" class="funFacts">
+                            <h3>Do you know?</h3>
+                            <p>The most adapted IP genre in Chinese animated films is
+                                <span style="font-weight: 900;font-style: italic;border-bottom: 1px solid;padding-bottom: 0px;">animated TV series</span> (71 films in total).</p></div>
+                        <div id="funFacts2" class="funFacts">
+                            <h3>Do you know?</h3>
+                            <p>The most used foreign IP characters are the
+                                <span style="font-weight: 900;font-style: italic;border-bottom: 1px solid;padding-bottom: 0px;">Three Little Pigs</span> and
+                                <span style="font-weight: 900;font-style: italic;border-bottom: 1px solid;padding-bottom: 0px;">Snow White</span>, with each adapted in 4 films.</p></div>
+                        <div id="funFacts3" class="funFacts">
+                            <h3>Do you know?</h3>
+                            <p>The most adapted Chinese IP is &quot;<span style="font-weight: 900;font-style: italic;border-bottom: 1px solid;padding-bottom: 0px;">Journey to the West</span>&quot; which has been adapted 11 times in 13 films since 1949.</p></div>
+                        <div id="funFacts4" class="funFacts">
+                            <h3>Do you know?</h3>
+                            <p>The most profitable animal character in China is the
+                                <span style="font-weight: 900;font-style: italic;border-bottom: 1px solid;padding-bottom: 0px;">bear</span>, with the &quot;Boonie Bears&quot; franchise raking in 274 million U.S. dollars since 1949.</p></div>
+                        <div id="zoom01" class="zoom">
+                            <img src="img/海外.png" alt="海外.png" /></div>
+                        <div id="zoom02" class="zoom">
+                            <img src="img/传统.png" alt="传统.png" /></div>
+                        <div id="zoom03" class="zoom">
+                            <img src="img/非传统.png" alt="非传统.png" /></div>
+                        <div id="movie1-1" class="hMovies movie1-1">
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M1-1">
+                                <p id="M1-1">&quot;The Monkey King&quot;
+                                    <br />adapted from &quot;Journey to the West&quot;</p></div>
+                        </div>
+                        <div id="movie1-2" class="hMovies movie1-2">
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M1-2">
+                                <p id="M1-2">"The Monkey King Conquers the Demon"
+                                    <br />adapted from &quot;Journey to the West&quot;</p></div>
+                        </div>
+                        <div id="movie1-3" class="hMovies movie1-3">
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M1-3">
+                                <p id="M1-3">&quot;Lotus Lantern&quot;
+                                    <br />adapted from &quot;The Magic Lotus Lantern&quot;</p></div>
+                        </div>
+                        <div id="movie2-1" class="hMovies movie2-1">
+                            <div class="movieName M2-1">
+                                <p id="M2-1">&quot;The New Pinocchio&quot;
+                                    <br />based on a fairy tale</p></div>
+                        </div>
+                        <div id="movie2-2" class="hMovies movie2-2">
+                            <div class="movieName M2-2">
+                                <p id="M2-2">&quot;Alibaba and The Thief&quot;
+                                    <br />based on a folktale</p></div>
+                        </div>
+                        <div id="movie2-3" class="hMovies movie2-3">
+                            <div class="movieName M2-3">
+                                <p id="M2-3">&quot;Tale of The Rally&quot;
+                                    <br />based on a fable</p></div>
+                        </div>
+                        <div id="movie3-1" class="hMovies movie3-1">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="movieName M3-1">
+                                <p id="M3-1">&quot;Ne Zha&quot;
+                                    <br />No.1</p></div>
+                        </div>
+                        <div id="movie3-2" class="hMovies movie3-2">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="movieName M3-2">
+                                <p id="M3-2">&quot;Monkey King: Hero is Back&quot;
+                                    <br />No.3</p></div>
+                        </div>
+                        <div id="movie3-3" class="hMovies movie3-3">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="movieName M3-3">
+                                <p id="M3-3">&quot;White Snake&quot;
+                                    <br />No.7</p></div>
+                        </div>
+                        <div id="movie4-1" class="hMovies movie4-1">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M4-1">
+                                <p id="M4-1">&quot;Boonie Bears&quot; franchise
+                                    <br />5 films in TOP 20</p></div>
+                        </div>
+                        <div id="movie4-2" class="hMovies movie4-2">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M4-2">
+                                <p id="M4-2">&quot;Pleasant Goat and Big Big Wolf&quot; franchise
+                                    <br />5 films in TOP 20</p></div>
+                        </div>
+                        <div id="movie4-3" class="hMovies movie4-3">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="movieName M4-3">
+                                <p id="M4-3">&quot;New Happy Dad and Son&quot; franchise
+                                    <br />2 films in TOP 20</p></div>
+                        </div>
+                        <div id="eat" class="eat"></div>
+                        <div id="hunger" class="hunger"></div>
+                        <div id="full" class="full"></div>
+                        <div id="iconDetails" class="iconDetails">
+                            <div id="wechat_detail" class="wechat_detail">
+                                <img src="img/wechat_detail.jpg" alt="wechat_detail" /></div>
+                            <div id="dy_detail" class="dy_detail">
+                                <img src="img/dy_detail.png" alt="dy_detail" /></div>
+                        </div>
 
-                		<div id="Intro" class="Intro">
-                    	<p>
-                    		Chinese animated film "Ne Zha" has shattered records since its domestic debut on July 26, raking in 611 million U.S. dollars by August 23 to become the third highest-grossing film in the Chinese mainland. Globally, it now ranks 49th on the list of top-grossing animated movies at the box office.
-                    		<br>
-                    		<br>
-                    		"Ne Zha" is loosely based on the Chinese novel "Investiture of the Gods" and the latest exhibit in a long-running trend of using Intellectual Property (IP) in the Chinese animation industry.
-                    	</p>
-                		</div>
-
-                		<div id="timeLine" class="timeLine">
-                			<img src="img/timelineray.png"  alt=""/>
-                		</div>
-
-                    	<div id="screen2" class="screen2"></div>
-                    	<div id="screen3" class="screen3"></div>
-                    	<div id="screen4" class="screen4"></div>
-                    	<div id="screen5" class="screen5"></div>
 
 
-                    	<div id="movie1-1" class="movie1-1">
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M1-1">
-                    		<p id="M1-1">The Monkey King</p>
-                    		</div>
-                    	</div>
+                        <div class="LG LG_PC">
+                            <div id="legendTitle">
+                                <p>Legend</p>
+                            </div>
+                            <ui id="legendImg" class="LG legend legendImg">
+                                <li>
+                                    <img src="img/legend-1.png" alt="legend-1" /></li>
+                                <li>
+                                    <img src="img/legend-2.png" alt="legend-2" /></li>
+                                <li>
+                                    <img src="img/legend-3.png" alt="legend-3" /></li>
+                                <li>
+                                    <img src="img/legend-4.png" alt="legend-4" /></li>
+                            </ui>
+                            <ui id="legendWord" class="LG legend legendWord">
+                                <li>
+                                    <p>Foreign IP</p>
+                                </li>
+                                <li>
+                                    <p>Traditional Chinese IP</p>
+                                </li>
+                                <li>
+                                    <p>Modern Chinese IP</p>
+                                </li>
+                                <li>
+                                    <p>Others</p>
+                                </li>
+                            </ui>
+                        </div>
 
-                    	<div id="movie1-2" class="movie1-2">
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M1-2">
-                    		<p id="M1-2">The Monkey King<br>Conquers the Demon</p>
-                    		</div>
-                    	</div>
+                        <div id="legendSmall" class="legendSmall">
+                            <div id="legendSmall1" class="legendSmall1">
+                                <h3>Legend</h3>
+                                <p>
+                                    <img src="img/legend-5.png" alt="legend-5" />Chinese IP</p></div>
+                            <div id="legendSmall2" class="legendSmall2">
+                                <h3>Legend</h3>
+                                <p>
+                                    <img src="img/legend-1.png" alt="legend-1" />Foreign IP</p></div>
+                            <div id="legendSmall3" class="legendSmall3">
+                                <h3>Legend</h3>
+                                <p>
+                                    <img src="img/legend-2.png" alt="legend-2" />Traditional Chinese IP</p></div>
+                            <div id="legendSmall4" class="legendSmall4">
+                                <h3>Legend</h3>
+                                <p>
+                                    <img src="img/legend-3.png" alt="legend-3" />Modern Chinese IP</p></div>
+                        </div>
 
-                    	<div id="movie1-3" class="movie1-3">
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M1-3">
-                    		<p id="M1-3">Lotus Lantern</p>
-                    		</div>
-                    	</div>
+                        <div id="legendSmall_M" class="legendSmall_M">
+                            <div id="legendSmall1_M" class="legendSmall1_M">
+                                <p>* Films adapted from <br> Chinese IP</p></div>
+                            <div id="legendSmall2_M" class="legendSmall2_M">
+                                <p>* Films adapted from <br> foreign IP</p></div>
+                            <div id="legendSmall3_M" class="legendSmall3_M">
+                                <p>* Films adapted from <br> traditional Chinese IP</p></div>
+                            <div id="legendSmall4_M" class="legendSmall4_M">
+                                <p>* Films adapted from <br> modern Chinese IP</p></div>
+                        </div>
 
-                    	<div id="movie2-1" class="movie2-1">
-                    		<div class="movieName M2-1">
-                    		<p id="M2-1">The New Pinocchio</p>
-                    		</div>
-                    	</div>
-
-                    	<div id="movie2-2" class="movie2-2">
-                    		<div class="movieName M2-2">
-                    		<p id="M2-2">Alibaba and The Thief</p>
-                    		</div>
-                    	</div>
-
-                    	<div id="movie2-3" class="movie2-3">
-                    		<div class="movieName M2-3">
-                    		<p id="M2-3">Tale of The Rally</p>
-                    		</div>
-                    	</div>
-
-                    	<div id="movie3-1" class="movie3-1">
-                    		<img src="img/边框.svg" alt="">
-                    		<img src="img/红蒙版.svg" alt="">
-                    		<div class="movieName M3-1">
-                    		<p id="M3-1">Ne Zha</p>
-                    		</div>
-                    	</div>
-                    	<div id="movie3-2" class="movie3-2">
-                    		<img src="img/边框.svg" alt="">
-                    		<img src="img/红蒙版.svg" alt="">
-                    		<div class="movieName M3-2">
-                    		<p id="M3-2">White Snake</p>
-                    		</div>
-                    	</div>
-                    	<div id="movie3-3" class="movie3-3">
-                    		<img src="img/边框.svg" alt="">
-                    		<img src="img/红蒙版.svg" alt="" >
-                    		<div class="movieName M3-3">
-                    		<p id="M3-3">Monkey King:<br> Hero is Back</p>
-                    		</div>
-                    	</div>
-
-                    	<div id="movie4-1" class="movie4-1">
-                    		<img src="img/蓝蒙版.svg" alt="" >
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M4-1">
-                    		<p id="M4-1">Boonie Bears” franchise</p>
-                    		</div>
-                    		
-                    	</div>
-                    	<div id="movie4-2" class="movie4-2">
-                    		<img src="img/蓝蒙版.svg" alt="" >
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M4-2">
-                    		<p id="M4-2">“Pleasant Goat and Big Big Wolf” franchise</p>
-                    		</div>
-                    		
-                    	</div>
-                    	<div id="movie4-3" class="movie4-3">
-                    		<img src="img/蓝蒙版.svg" alt="" >
-                    		<img src="img/边框.svg" alt="">
-                    		<div class="movieName M4-3">
-                    		<p id="M4-3">“McDull” franchise</p>
-                    		</div>
-                    		
-                    	</div>
-
-
-                	</div>
-                	<div id="conclusion" class="conclusion">
-                    		<p>From relying on domestic IPs to experimenting with original storylines and foreign IP adaptations, Chinese animated films have reinvented themselves over 70 years of development. The phenomenal sensation brought by "Monkey King: Hero is Back" in 2015 has whetted the Chinese audience's appetite for a solid "Chinese story," while the megahit "Ne Zha" this year is fueling further explorations of local traditional IPs.</p>
                     </div>
-                    
+                </div>
+            </div>
+            <div div="box01" class="box01">
+                <div id="zipRec" class="zipRec"></div>
+                <div id="text001" class="event001">
+                    <p id="boxText">Before 2000, domestic IPs, mainly works of literature, inspired big-screen animations in China.</p>
+                    <div id="M_movie1-1" class="M_hMovies M_movie1-1">
+                        <img src="img/边框.png" alt="" />
+                        <div class="M_movieName M_M1-1">
+                            <p id="M_M1-1">&quot;The Monkey King&quot;
+                                <br />adapted from
+                                <br />&quot;Journey to the West&quot;</p></div>
+                    </div>
+                    <div id="M_movie1-2" class="M_hMovies M_movie1-2">
+                        <img src="img/边框.png" alt="" />
+                        <div class="M_movieName M_M1-2">
+                            <p id="M1-2">"The Monkey King
+                                <br />Conquers the Demon"
+                                <br />adapted from
+                                <br />&quot;Journey to the West&quot;</p></div>
+                    </div>
+                    <div id="M_movie1-3" class="M_hMovies M_movie1-3">
+                        <img src="img/边框.png" alt="" />
+                        <div class="M_movieName M_M1-3">
+                            <p id="M1-3">&quot;Lotus Lantern&quot;
+                                <br />adapted from
+                                <br />&quot;The Magic
+                                <br />Lotus Lantern&quot;</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="textAll" class="textAll">
+                <div class="section section1">
+                    <div id="text001Copy" class="event">
+                        <h3>占位段落01</h3></div>
+                </div>
+                <div class="section section2">
+                    <div id="text002" class="event">
+                        <h3>占位段落02</h3></div>
+                </div>
+
+                <div class="section section3">
+                    <div id="text003" class="event">
+                        <p>The year 2000 witnessed a burgeoning shift in preferences as numbers of domestic IP adaptions began to drop.</p>
+                    </div>
+                </div>
+                <div class="section section4">
+                    <div id="text004" class="event">
+                        <p>Since 2013, foreign IPs became popular in Chinese IP films.</p>
+                        <div id="M_movie2-1" class="M_hMovies M_movie2-1">
+                            <div class="M_movieName M_M2-1">
+                                <p id="M_M2-1">&quot;The New Pinocchio&quot;
+                                    <br />based on a fairy tale</p></div>
+                        </div>
+                        <div id="M_movie2-2" class="M_hMovies M_movie2-2">
+                            <div class="M_movieName M_M2-2">
+                                <p id="M_M2-2">&quot;Alibaba and The Thief&quot;
+                                    <br />based on a folktale</p></div>
+                        </div>
+                        <div id="M_movie2-3" class="M_hMovies M_movie2-3">
+                            <div class="M_movieName M_M2-3">
+                                <p id="M_M2-3">&quot;Tale of The Rally&quot;
+                                    <br />based on a fable</p></div>
+                        </div>
+                        <br />
+                        <p class="PCtext">
+                            <span style="background-color: #F8E71C">Fairy tales, folktales and fables</span> are good fodder for animated films not just in China. Of the 57 Disney animated productions, 46 are either based or inspired by these genres.</p></div>
                 </div>
 
 
-                <div id="eat" class="eat"></div>
-                <div id="hunger" class="hunger"></div>
-                <div id="full" class="full"></div>
-                	
+                <div class="section section5">
+                    <div id="text005" class="event">
+                        <p>The &quot;Kung Fu Panda&quot; trilogy might be the most popular China-centric animation, but the franchise is a U.S. IP created by DreamWorks Animation. The 3rd installment, however, is a co-production between China and the U.S. and the most successful foreign IP adaptation, having hauled in 140 million U.S. dollars. But its exceptional performance is a breakaway success for foreign IP adaptations in the country.</p>
+                        <img id="small01" class="small" src="img/海外.png" />
+                        <!-- <figure><figcaption>something1111111</figcaption></figure>  --></div>
+                </div>
+                <div class="section section6">
+                    <div id="text006" class="event">
+                        <p>Films adapted
+                            <span style="background-color: #F8E71C">from classic literature and mythology</span> are also more likely to become blockbusters.</p>
+                        <div id="M_movie3-1" class="M_hMovies M_movie3-1">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="M_movieName M_M3-1">
+                                <p id="M_M3-1">&quot;Ne Zha&quot;
+                                    <br />No.1</p></div>
+                        </div>
+                        <div id="M_movie3-2" class="M_hMovies M_movie3-2">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="M_movieName M_M3-2">
+                                <p id="M_M3-2">&quot;Monkey King:
+                                    <br />Hero is Back&quot;
+                                    <br />No.3</p></div>
+                        </div>
+                        <div id="M_movie3-3" class="M_hMovies M_movie3-3">
+                            <img src="img/边框.png" alt="" />
+                            <img src="img/红蒙版.png" alt="" />
+                            <div class="M_movieName M_M3-3">
+                                <p id="M_M3-3">&quot;White Snake&quot;
+                                    <br />No.7</p></div>
+                        </div>
+
+                        <div id="M_mNote" class="M_mNote">
+                            <p>*Note: Rankings of Chinese animated film box office in Chinese Mainland.</p>
+                        </div>
+                        <p class="PCtext">Traditional Chinese IPs have also found fame in overseas movie markets. Disney's &quot;Mulan&quot; is adapted from the poem &quot;The Ballad of Mulan&quot; and the &quot;Dragon Ball&quot; franchise is inspired by &quot;Journey to the West.&quot;</p></div>
+                </div>
+                <div class="section section7">
+                    <div id="text007" class="event">
+                        <p>The smashing success of &quot;Monkey King: Hero is Back&quot; brought to the fore the potential of traditional IP adaptations. Similar attempts followed but the feat of the 2015 film was hard to duplicate.</p>
+                        <img id="small02" class="small" src="img/传统.png" />
+                        <!-- <figure><figcaption>something2222222</figcaption></figure>  --></div>
+                </div>
+                <div class="section section8">
+                    <div id="text008" class="event">
+                        <p>Films adapted from modern IP present a steadier box office performance in general than their traditional counterparts. These IPs are mostly
+                            <span style="background-color: #F8E71C">original animated TV series</span> or
+                            <span style="background-color: #F8E71C">cartoon shows</span>. Of the top 20 highest-grossing animated films in the Chinese Mainland,
+                            <span style="background-color: #F8E71C">12</span> are adapted from TV animations.</p>
+                        <div id="M_movie4-1" class="M_hMovies M_movie4-1">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="M_movieName M_M4-1">
+                                <p id="M_M4-1">&quot;Boonie Bears&quot;
+                                    <br />franchise
+                                    <br />5 films in TOP 20</p></div>
+                        </div>
+                        <div id="M_movie4-2" class="M_hMovies M_movie4-2">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="M_movieName M_M4-2">
+                                <p id="M_M4-2">&quot;Pleasant Goat and Big
+                                    <br />Big Wolf&quot;
+                                    <br />franchise
+                                    <br />5 films in TOP 20</p></div>
+                        </div>
+                        <div id="M_movie4-3" class="M_hMovies M_movie4-3">
+                            <img src="img/蓝蒙版.png" alt="" />
+                            <img src="img/边框.png" alt="" />
+                            <div class="M_movieName M_M4-3">
+                                <p id="M_M4-3">&quot;New Happy Dad
+                                    <br />and Son&quot;
+                                    <br />franchise
+                                    <br />2 films in TOP 20</p></div>
+                        </div>
+                    </div>
+                </div>
 
 
-	</div>
-
-<div div="box01" class="box01">
-
-	<div id = "zipRec" class="zipRec"></div>
-	<div id = "text001" class="event001">
-
-			        <p>Before the turn of the 21st Century, domestic IPs, mainly works of literature, inspired big-screen animations in China. "The Monkey King" and "the Monkey King Conquers the Demon" were both adapted from "Journey to the West," one of the four classics of Chinese literature, while folktale "The Magic Lotus Lantern" brought about "Lotus Lantern."
-					</p>
-			        
-	</div>
+                <div class="section section9">
+                    <div id="text009" class="event">
+                        <p>It's not surprising that non-traditional IP films do relatively better since they benefit from the brand recognition of the IP and its existing audience base.</p>
+                        <img id="small03" class="small" src="img/非传统.png" />
+                        <!-- <figure><figcaption>something3333333</figcaption></figure>  --></div>
+                </div>
 
 
+                <div class="section section10">
+                    <div id="text010" class="event">
+                        <p>From relying on domestic IPs to experimenting with original storylines and foreign IP adaptations, Chinese animated films have reinvented themselves over 70 years of development. The phenomenal sensation brought by &quot;Monkey King: Hero is Back&quot; in 2015 has whetted the Chinese audience's appetite for a solid &quot;Chinese story,&quot; while the megahit &quot;Ne Zha&quot; this year is fueling further explorations of local traditional IPs.</p>
 
-</div>
-
-	<div id="textAll" class="textAll">
-
-		<div class="section section1">
-			<div id = "text001Copy" class="event">
-				<h3>占位段落01</h3>
-		        
-			</div>
-		</div>
-
-		<div class="section section2">
-			<div id = "text002" class="event">
-				<h3>占位段落02</h3>
-
-			</div>
-		</div>
-
-		<div class="section section3">
-			<div id= "text003" class="event">
-		        <p>
-		        	The year 2000 witnessed a burgeoning shift in preferences as filmmakers began to slowly ditch local IPs for foreign copyrights. That year, 40% of the animated films that hit the theaters were adapted from Chinese IPs.		       	
-		        </p>
-
-			</div>
-		</div>
-
-		<div class="section section4">
-			<div id= "text004" class="event">
-				
-		        <p>Since 2013, foreign IPs have become a fixture in Chinese IP films. "The New Pinocchio," "Alibaba and The Thief" and "Tale of the Rally," which is based on "The Tortoise and the Hare," are examples of Chinese renditions of literature imports.</p>
-		        <br>
-				<p>Fairy tales, folktales and fables are good fodder for animated films not just in China. Of the 57 Disney animated productions, 46 are either based or inspired by these genres.
-				</p>
-			</div>
-		</div>
-
-		<div class="section section5">
-			<div id= "text005" class="event">
-		      
-		        <p>The "Kung Fu Panda" trilogy might be the most popular China-centric animations, but the franchise is essentially a U.S. IP created by Dream Works Animation. The third installment, however, is a co-production between Chinese and U.S. companies, and the most successful foreign IP adaptation in Chinese animation industry to this date. It hauled in 10 billion yuan (1.4 billion U.S. dollars), but the exceptional performance is a breakaway success for foreign IP adaptations in the country. </p>
-		        <img src="img/separated_chart03.svg" style="display:block; width:calc(80%);margin:0 auto;"/>
-				<!-- <figure><figcaption>something1111111</figcaption></figure>	 -->
-			</div>
-		</div>
-
-		<div class="section section6">
-			<div id= "text006" class="event">
-				
-		        <p>A look at the top 10 box office hits in Chinese animated film industry shows that local IP films fare better than adaptations of foreign IPs. Films adapted from classic literature and mythology are also more likely to become blockbusters. "Monkey King: Hero is Back," White Snake" and "Ne Zha" are all cases in point.</p>
-		        <br>
-				<p>Traditional Chinese IPs have also found fame in overseas movie markets.  Disney's "Mulan" is adapted from 6th-century poem "The Ballad of Mulan" and the "Dragon Ball" franchise is inspired by "Journey to the West."
-				</p>
-			</div>
-		</div>
-
-		<div class="section section7">
-			<div id= "text007" class="event">
-				
-		        <p>The smashing success of the "Monkey King: Hero is Back" brought to the fore the potential of traditional IP adaptations. There were attempts to capitalize on the power of historical and cultural references but the feat of the 2015 film was hard to duplicate.</p>
-		        <img src="img/separated_chart03.svg" style="display:block; width:calc(80%);margin:0 auto;"/>
-				<!-- <figure><figcaption>something2222222</figcaption></figure>	 -->
-			</div>
-		</div>
-
-		<div class="section section8">
-			<div id= "text008" class="event">
-
-		        <p>Films adapted from modern IP present a steadier box office performance in general than their traditional counterparts. These IPs are mostly original animated TV series or cartoon shows. Five of the top 10 highest-grossing animated films in China belong to the “Boonie Bears” franchise. Of the top 20, 12 are adapted from TV animations.</p>
-			</div>
-		</div>
-
-
-		<div class="section section9">
-			<div id= "text009" class="event">
-				<p>It’s not surprising that non-traditional IP films do relatively better since they benefit from the brand recognition of the IP and its existing audience base.</p>
-				<img src="img/separated_chart03.svg" style="display:block; width:calc(80%);margin:0 auto;"/>
-				<!-- <figure><figcaption>something3333333</figcaption></figure>	 -->
-			</div>
-		</div>
-
-		<div class="section section11" style="opacity: 0;">
-			<div id= "text011" class="event" >
-				<p>The End</p>
-			</div>
-		</div>
-
-		<div class="section section12" style="opacity: 0;>
-			<div id= "text012" class="event" ">
-				<p>The End</p>
-			</div>
-		</div>
-</div>
+                    </div>
+                    <div id="Copyright" class="Copyright">
+                        <p style="width: 100%">Copyright &copy; 2018 CGTN. Beijing ICP prepared NO. 16065310-3</p>
+                        <div id="CopyLine" class="CopyLine"></div>
+                        <div id="shares" class="shares">
+                            <div id="facebook" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/facebook" target="_Blank">
+                                    <img src="img/fb.png" alt="facebook" /></a>
+                            </div>
+                            <div id="tweet" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/twitter" target="_Blank">
+                                    <img src="img/tw.png" alt="tweet" /></a>
+                            </div>
+                            <div id="youtube" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/youtube" target="_Blank">
+                                    <img src="img/yb.png" alt="tweet" /></a>
+                            </div>
+                            <div id="ins" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/instagram" target="_Blank">
+                                    <img src="img/ins.png" alt="tweet" /></a>
+                            </div>
+                            <div id="pin" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/pinterest" target="_Blank">
+                                    <img src="img/pin.png" alt="tweet" /></a>
+                            </div>
+                            <div id="tumblr" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/tumblr" target="_Blank">
+                                    <img src="img/tumblr.png" alt="tweet" /></a>
+                            </div>
+                            <div id="miaopai" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/miaopai" target="_Blank">
+                                    <img src="img/mp.png" alt="tweet" /></a>
+                            </div>
+                            <div id="wechat" class="icons">
+                                <img src="img/wechat.png" alt="tweet" /></div>
+                            <div id="weibo" class="icons">
+                                <a href="//www.cgtn.com/socialmedia/weibo" target="_Blank">
+                                    <img src="img/weibo.png" alt="tweet" /></a>
+                            </div>
+                            <div id="douyin" class="icons">
+                                <img src="img/dy.png" alt="tweet" /></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section11" style="opacity: 0" ;="">
+                    <div id="text011" class="event">
+                        <p>The End</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <script src="js/fullpageMain.js"></script>
-</body>
+<script src="js/share.js"></script>
+    </body>
+
 </html>
