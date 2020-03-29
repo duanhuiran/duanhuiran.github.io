@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>five year plan</title>
+  <!-- <style> body {padding: 0; margin: 0;} </style> -->
+  <script language="javascript" type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Word.js"></script>
+  <script src="lib/p5.js"></script>
+  <script src="sketch.js"></script>
+
+  <script src="lib/index.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:700|Playfair+Display+SC&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Cuprum|Squada+One|Yanone+Kaffeesatz&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|IM+Fell+English+SC|IM+Fell+Great+Primer+SC|Radley|Spectral+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- <link rel="stylesheet" href="jquery-ui.css"> -->
+  <link rel="stylesheet" href="css/animate.css">
+  <script>
+    $(window).on('beforeunload', function() {
+      $(window).scrollTop(0);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="loading-page">
+    <div class="cell">
+      <div class="pl pl-leapfrog"></div>
+      <div class="pl-name">L O A D I N G</div>
+    </div>
+  </div>
+  <div id="progress-container">
+    <div class="progress-bar" id="upperBar"></div>
+  </div>
+  <div id="cover-bg">
+    <p id="cover-para"></p>
+  </div>
+  <div id="upper">
+    <div id="styled-bars">
+      <div class="upper-bar"></div>
+      <div class="under-bar"></div>
+    </div>
+
+    <div id="menu">
+      <div id="menu-guide">
+        <a class="scroll-down-img"></a>
+        <p class="menu-guide-text">Explore sections that are</p>
+      </div>
+      <div id="menu-button">
+        <!-- <p class = "menu-guide">Explore sections that are</p> -->
+        <span class="button-border"><button id="Task" class="button">Task</button></span>
+        <span class="button-border"><button id="Manufacturing" class="button">Manufacturing</button></span>
+        <span class="button-border"><button id="Agriculture" class="button">Agriculture</button></span>
+        <span class="button-border"><button id="Health" class="button">Health</button></span>
+        <span class="button-border"><button id="Democracy" class="button">Democracy</button></span>
+        <!-- <span class = "button-border"><button id = "Reform" class = "button">Reform</button></span> -->
+        <span class="button-border"><button id="Tech" class="button">R&D</button></span>
+        <span class="button-border"><button id="Environment" class="button">Environment</button></span>
+        <span class="button-border"><button id="Trade" class="button">Trade</button></span>
+        <span class="button-border"><button id="Defence" class="button">Defence</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="fyp-head">
+      <div id="head-content0" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1953</p>
+          <p class="aligncenter">I</p>
+          <p class="alignright">1957</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">1st Year Plan</div>
+      </div>
+
+      <div id="head-content1" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1986</p>
+          <p class="aligncenter">VII</p>
+          <p class="alignright">1990</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">7th Year Plan</div>
+      </div>
+
+      <div id="head-content2" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1991</p>
+          <p class="aligncenter">VIII</p>
+          <p class="alignright">1995</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">8th Year Plan</div>
+      </div>
+
+      <div id="head-content3" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1996</p>
+          <p class="aligncenter">IX</p>
+          <p class="alignright">2000</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">9th Year Plan</div>
+      </div>
+
+      <div id="head-content4" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2001</p>
+          <p class="aligncenter">X</p>
+          <p class="alignright">2005</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">10th Year Plan</div>
+      </div>
+
+      <div id="head-content5" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2006</p>
+          <p class="aligncenter">XI</p>
+          <p class="alignright">2010</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">11th Year Plan</div>
+      </div>
+
+      <div id="head-content6" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2011</p>
+          <p class="aligncenter">XII</p>
+          <p class="alignright">2015</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">12th Year Plan</div>
+      </div>
+
+      <div id="head-content7" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2016</p>
+          <p class="aligncenter">XIII</p>
+          <p class="alignright">2020</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">13th Year Plan</div>
+      </div>
+
+    </div>
+    <div id="theCanvas"></div>
+  </div>
+
+
+  <div id="scroll-page">
+    <div id="cover">
+      <div id="cover-border">
+        <div class="cover-img-div"><img class="cover-img" src="img/cover-star.png"></div>
+        <div id="cover-content">
+          <h1 class="cover-title"><span class="cover-title-span">How's China doing in its 13 Five-Year Plans</span> <span class="sub-cover-content">— 1953 - 2020 —</span></h1>
+          <!-- <div class="cover-star-div"><img class="cover-star" src="img/cover-star.png"><img class="cover-star" src="img/cover-star.png"><img class="cover-star" src="img/cover-star.png"><img class="cover-star" src="img/cover-star.png"><img
+              class="cover-star" src="img/cover-star.png"></div> -->
+
+          <!-- <p class="cover-p"><span class="cover-span">Macao is best known for its gaming sector. But as the Macao SAR government pursues diversification in its economic structure, the city aims to develop into a world-class tourism and leisure
+              destination as well as a leading technology incubator. </span></p>-->
+
+        </div>
+
+        <p id="scrollDown" class="scroll-down"><span class="scroll-down-text">Scroll to take the tour</span></p>
+        <a class="scroll-down-link scroll-down-arrow"></a>
+      </div>
+    </div>
+
+    <section id="card0" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">intro1</h1>
+        <p>The Five-Year Plan (FYP) is China's top-level policy blueprint. Drawn up every five years since 1953, it sets medium to long term goals for the country's social and economic development. The year of 2020 is the last year of the 13th.</p>
+        <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a><span class="scroll-down-text-small">Continue scrolling or <span id="toExplore">Explor the stroy directly.</span< /span>
+        </p>
+      </div>
+    </section>
+
+    <section id="card1" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Show All Texts</h1>
+        <p>CGTN analyzes how China's development plans have changed over time through comparing the contents and text of China's eight FYPs*, and thus presents a general picture of the People's Republic of China (PRC)'s economic development since its
+          founding.</p>
+        <p class="annotation" id="card-note">*The second to sixth FYPs are excluded in this analysis as they are not open to the public.</p>
+      </div>
+    </section>
+
+    <section id="card2" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Task1</h1>
+        <p>Economic development remains the center of <span id="gdp-growth" class="infographic-hover">each FYP</span>. Content on economic development and industrial restructuring is put on the top list of the targets and tasks for each FYP.</p>
+        <p>Starting from the seventh, each FYP would set an average annual GDP growth rate, as an important indicator measuring national economy for the next five years. </p>
+        <!-- <img class="infographic" src="img/gdp-growth.png"> -->
+
+      </div>
+    </section>
+
+    <section id="card3" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Task2</h1>
+        <p>From the first FYP, China's industrial structure has experienced dramatic changes with smaller proportion of the primary industry, and bigger shares of the secondary and tertiary industries. </p>
+        <!-- <img class="infographic" src="img/industrial.png"> -->
+      </div>
+    </section>
+
+    <section id="card4" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Manufacturing1-show Manufacturing text</h1>
+        <p>During the first FYP, China focused on the development of heavy industry, involving energy, raw material and machinery, and basically formed its own independent industrial system.
+          Data show that the industrial development encountered some setbacks, even negative growth in some years during the second to sixth FYPs.</p>
+        <!-- <img class="infographic" src="img/manufacturing1.png"> -->
+        <div class="legend"> <img class="legend-img" src="img/manu-legend.png"><span class="legend-text">manufacture texts</span></div>
+      </div>
+    </section>
+
+    <section id="card5" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Manufacturing2</h1>
+        <p>In the 11th FYP, "Industry" stands alone as a whole chapter. This happens only once besides the <span id="manufacturing1" class="infographic-hover">first FYP.</span></p>
+        <p class="scroll-text-highlight"><span class="quote-span manufacture-highlight-span">"We take the capital construction of heavy industry as the main task of the first FYP for developing national economy, and start with the 156 industrial
+            projects designed by the
+            Soviet Union."</p>
+        <p>In the <span id="manufacturing2" class="infographic-hover">11th FYP,</span> "Industry" stands alone as a whole chapter. </p>
+        <p class="scroll-text-highlight"><span class="quote-span manufacture-highlight-span" data-ma_delay="3.5s" data-ma_duration="1s">"We will implement the Made in China 2020 action plan. "</span></p>
+        <!-- <img class="infographic" src="img/manufacturing2.png"> -->
+      </div>
+    </section>
+
+    <section id="card6" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Agriculture1-show all text</h1>
+        <p>Problems also emerged in the industrial restructuring. Since the sixth FYP period, the income gap between rural and urban residents widened</p>
+        <div><img class="legend-img" src="img/manu-legend.png"><span class="legend-text">Manufacture text</span><span class="white-space"></span><img class="legend-img" src="img/agri-legend.png"><span class="legend-text">Agriculture texts</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="card7" class="scroll-card">
+      <div class="card-border">
+        <h1 class="card-title">Agriculture2</h1>
+        <p>Plans for rural areas development appear as the second part in the 11th FYP, called "Construction of New Social Villages". In the subsequent FYPs, plans for rural areas all have a whole chapter of content, showing the country's <span
+            id="agriculture" class="infographic-hover">increasing
+            focus</span> on rural development. </p>
+        <p class="scroll-text-highlight"><span class="quote-span agriculture-highlight-span">"Stick to regarding the resolution of the ‘three dimensional rural issues’ as the key point of key point for all party members' work…"</span></p>
+        <!-- <img class="infographic" src="img/income.png"> -->
+      </div>
+    </section>
+
+    <section id="card8" class="scroll-card">
+      <div id="explore-title" class="card-border">
+
+      </div>
+    </section>
+
+  </div>
+
+  <div id="manufacture-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We take the capital construction of heavy industry as the main task of the first FYP for developing national economy, and start with the 156 industrial projects designed by
+        the Soviet
+        Union."</span></p>
+  </div>
+
+  <div id="manufacture-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will implement the Made in China 2020 action plan. With an emphasis on strengthening the innovative capacity and basic capabilities of manufacturing, we will work to
+        deepen the
+        integration of information technology and manufacturing technology and promote the development of high-end, smart, green, and service-orientated manufacturing so as to foster a new competitive edge in manufacturing. "</span></p>
+  </div>
+
+  <div id="agriculture-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"Stick to regarding the resolution of the ‘three dimensional rural issues’ as the key point of key point for all party members' work…"</span></p>
+  </div>
+
+  <div id="health-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">After the outbreak of SARS in 2003, China included the proposal of establishing a public health emergency response system in its 11th FYP.</span></p>
+  </div>
+
+  <div id="health-text2" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">When it comes to the 13th FYP, China expanded the public health topic into a whole chapter, mapping out seven aspects to "promote a healthy China."</span></p>
+  </div>
+
+  <div id="democracy-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">Since the 10th FYP, the expression of "a country based on the rule of law" replaces "a country with legal system" and the systems of the socialist rule of law, which reflects
+        China's
+        willingness to achieve the overarching goal of modernizing the country's system and capacity for governance through integrating the rule of law. </span></p>
+    <p class="text-highlight-p"><span class="text-box-span">The phrase "Legal system" focuses more on the static rules and systems of the law while "the rule of law" includes not only dynamic legislative, judicial, administrative law enforcement and
+        law-abiding actions but also a value pursuit, which aims to achieve social fairness and justice, requires limiting public power and safeguarding private rights.</span></p>
+  </div>
+
+  <div id="democracy-text2" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">Developing socialist democracy and improve the socialist rule of law is always a key topic for every FYP, whose purpose is to give full expression to the will of the people,
+        protect their
+        rights and interests, spark their creativity, and provide systemic and institutional guarantees to ensure the people run the country.</span></p>
+  </div>
+
+  <div id="rd-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"All scientific research institutions should focus on the areas relating to practical issues in national constructions."</span></p>
+  </div>
+
+  <div id="rd-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"China will increase its proportion of research and development expenditure to more than 1.5 percent of the GDP"</span></p>
+  </div>
+
+  <div id="rd-text3" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"推动科技创新与大众创业万众创新有机结合"</span></p>
+  </div>
+
+  <div id="environment-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"CO2 emissions per unit of GDP will decrease 17%. China must significantly reduce the intensity of our energy consumption and CO2 emissions, as well as effectively regulate
+        greenhouse
+        gas (GHG) emissions."</span></p>
+  </div>
+
+  <div id="trade-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will boost economic cooperation with communist states leading by the Soviet Union. Particularly, we will expand trade with the Soviet Union and steadily increase trade
+        with
+        people's democratic countries."</span></p>
+  </div>
+
+  <div id="trade-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"China will relax restrictions on export-oriented enterprises to encourage them to develop foreign trade."</span></p>
+  </div>
+
+  <div id="trade-text3" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"To meet its commitment to joining the WTO, China will gradually lower tariffs according to the country's socioeconomic status and industrial structure"</span></p>
+  </div>
+
+  <div id="defence-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"对于国防费和行政管理费的增长要适当加以控制"</span></p>
+  </div>
+
+  <div id="defence-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"坚持国家主导、制度创新、市场运作、军民兼容原则，统筹经济建设和国防建设，充分依托和利用社会资源，提高国防实力和军事能力，大力推进军地资源开放共享和军民两用技术相互转移"</span></p>
+  </div>
+
+  <div id="task-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">"Economic development remains the center of each FYP. Content on economic development and industrial restructuring is put on the top list of the targets and tasks for each
+        FYP."</span></p>
+  </div>
+
+  <div id="gdp-growth-card" class="info-holder">
+    <div class="img-div"><img class="infographic" src="img/industrial.png"> </div>
+  </div>
+  <div id="manufacturing1-card" class="info-holder">
+    <div class="img-div"><img class="infographic" src="img/manufacturing1.png"> </div>
+  </div>
+  <div id="manufacturing2-card" class="info-holder">
+    <div class="img-div"><img class="infographic" src="img/manufacturing2.png"> </div>
+  </div>
+  <div id="agriculture-card" class="info-holder">
+    <div class="img-div"><img class="infographic" src="img/agriculture.png"> </div>
+  </div>
+
+</body>
+
+</html>
