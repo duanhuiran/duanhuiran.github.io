@@ -19,10 +19,24 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- <link rel="stylesheet" href="jquery-ui.css"> -->
   <link rel="stylesheet" href="css/animate.css">
+  <link rel="shortcut icon" href="img/favicon.ico" />
   <script>
+
+
     $(window).on('beforeunload', function() {
       $(window).scrollTop(0);
     });
+
+  $("#info").click(function(){
+    // console.log(123);
+  $(".cast").fadeIn();
+
+});
+
+  $(".close").click(function(){
+  $(".cast").fadeOut();
+});
+
   </script>
 </head>
 
@@ -51,6 +65,33 @@
       <div class= "pl-annotation">推荐使用Chrome浏览器以获得更好的浏览体验（翻）</div>
     </div>
   </div>
+
+
+  <div id="cast" class="cast">
+      <div id="close" class="close">
+          <img src="img/close.png" alt="close" /></div>
+      <div id="Note" class="Note">
+          <h2>*Note</h2>
+          <p>Data sources: Douban (Douban.com) and ChinaBoxOffice (Cbooo.cn)
+              <br />Data is limited to Chinese animated films (including co-productions) released in the Chinese Mainland from October 1949 to August 2019.
+              <br />Films must be over 40 minutes long and have animation in at least 75 percent of their running time, or have at least 40 minutes of animation in total.
+              <br />Disclaimer: All movie posters and animation characters are copyright to their respective owners. For inquiries please contact c_lab@cgtn.com.</p></div>
+      <div id="castLine" class="castLine"></div>
+      <div id="Credit" class="Credit">
+          <h2>Credit</h2>
+          <p>Credits:Multimedia Producers: Xu Jiye, Zhou Rui, Hu Yiwei. Interactive Designer: Li Yixiao.Data Editors & Visualization: Hu Yiwei, Zhourui, Shi Tao, Huo Qiru(Intern). Interactive Developer: Bi Jiankun. Editors: Zhou Minxi, Wang Xiaonan.Copy Editors: John Goodrich, Matthew Arrington Watson. Consultant: Xia Jixuan.Project Managers: Si Nan, Li Tianfu. Managing Director: Zhang Shilei.Supervisor: Fan Yun.</p>
+      </div>
+  </div>
+
+  <div id="CGTNlogo2" class="CGTNlogo">
+    <img src="img/CGTN金.png" alt="CGTN" />
+  </div>
+
+  <div id="info" class="info">
+      <img src="img/info.png" alt="info" />
+  </div>
+
+
   <div id="progress-container">
     <div class="progress-bar" id="upperBar"></div>
   </div>
@@ -85,12 +126,13 @@
   </div>
 
   <div id="container">
+
     <div id="fyp-head">
       <div id="head-content0" class="head-content">
         <div class="head-title">
           <p class="alignleft">1953</p>
           <p class="aligncenter">I</p>
-          <p class="alignright">1957</p>
+          <p class="alignright">1957</p> 
         </div>
         <div style="clear: both;"></div>
         <div class="underline"></div>

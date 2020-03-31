@@ -194,7 +194,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  top: 3%;
+  top: 5%;
   border-radius: 10px;
   background: rgba(153, 149, 132, 0.4);
 }
@@ -1154,8 +1154,8 @@ background: hsl(3, 95%, 29%); */
 
   width: 100%;
   height: 100%;
-  background-color: #3cb3dc;
-  position: absolute;
+  background-color: #fec02f;
+  position: fixed;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -1190,15 +1190,123 @@ background: hsl(3, 95%, 29%); */
 }
 
 .CGTNlogo{
-  position: absolute;
-  width: 3vw;
-  z-index:10;
+ position: fixed;
+    width: 50px;
+    z-index: 10;
+    right: 0%;
+    top: 1.5%;
+    margin-right: 2.5%;
   
 }
 
 .CGTNlogo img{
   width: 100%;
-  margin:2.5vh 1.5vw;
+  margin:0 0;
   z-index:10;
 
 }
+
+.info{
+    position: fixed;
+    width: 20px;
+    z-index: 1000000;
+    right: 0%;
+    margin-right: 2.5%;
+    bottom: 3%;
+    cursor: pointer;
+}
+
+.info img{
+  width: 100%;
+  margin:0 0;
+  z-index:10;
+
+
+}
+
+.cast{
+  position: fixed;
+  margin:0 15%;
+  top: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius:1%;
+  background-color: #9b3117;
+  z-index: 1000;
+  font-size:100%;
+  display: none;
+  /*vertical-align:middle;*/
+  /*text-align: center;*/
+  /*display: none;*/
+
+}
+
+.Note{
+  position: relative;
+  display: block;
+  margin:10% 10% 3% 10%; 
+  
+
+}
+
+.close{
+  cursor:pointer;
+  position: absolute;
+  display: block;
+  right: 3%;
+  top: 5%;
+  width: 20px;
+  height: 20px;
+}
+
+.close img{
+  position: absolute;
+  display: block;
+  width: 100%;
+}
+
+.Note h2{
+  /*font-family: "Avenir";*/
+  color: #fec02f;
+  font-weight: 900;
+}
+
+.Note p{
+  /*font-family: "Avenir";*/
+  color: #fec02f;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.castLine{
+  height: 1px;
+  width: 80%;
+  background-color: #fec02f;
+  bottom: 0px;
+  margin:  20px auto;
+}
+
+.Credit{
+  position: relative;
+  display: block;
+  margin:0 10% 10% 10%; 
+
+}
+
+.Credit h2{
+  font-family: "Avenir";
+  color: #fec02f;
+  
+  font-weight: 900;
+}
+
+
+.Credit p{
+  font-family: "Avenir";
+  color: #fec02f;
+  font-style: italic;
+  font-weight: 600;
+}
+
+
+

@@ -202,17 +202,23 @@ window.onload = function() {
   //  console.log(is_ie);
     return is_ie;
   }
-  if (isIE()) {
-                    document.getElementById("IE-alert").style.display = "block";
+
+  if (isIE()) {document.getElementById("IE-alert").style.display = "block";
+                
                 } else {
+
                     //do nothing.
-                }
+                };
 };
 
 
 
 //resize layouts.
 $(window).resize(function() {
+
+
+
+  
   wh = $(window).height();
   canvasHeight = wh - upperHeight - fypHeadHeight;
   upperHeight = $("#upper").height();
@@ -2088,3 +2094,5 @@ function ease(p, g) {
   else
     return 1 - 0.5 * pow(2 * (1 - p), g);
 }
+
+
