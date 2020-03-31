@@ -202,13 +202,14 @@ window.onload = function() {
   //  console.log(is_ie);
     return is_ie;
   }
-};
-
-if (isIE()) {
+  if (isIE()) {
                     document.getElementById("IE-alert").style.display = "block";
                 } else {
                     //do nothing.
                 }
+};
+
+
 
 //resize layouts.
 $(window).resize(function() {
