@@ -535,19 +535,19 @@ background: hsl(3, 95%, 29%); */
   font-family: serif, -webkit-pictograph, cursive, "Times";
 }
 
-.cover-title {
+.cover-title-M{
+  display: none;
+}
+
+.cover-title{
   padding: 5%;
   padding-top: 0;
   padding-bottom: 0;
   display: inline-block;
   text-align: center;
-  /* font-family: 'Playfair Display SC', 'Lato', "Garamond", "Palatino", 'Times'; */
   font-family: 'Spectral SC', serif;
-  font-size: 3em;
+  font-size: 2em;
   color: rgb(255, 193, 7);
-  /* border-top: 2px solid rgba(255, 193, 7, 0.4); */
-  /*
-  background: rgba(90, 9, 5, 0.85); */
 }
 
 .cover-title-span {

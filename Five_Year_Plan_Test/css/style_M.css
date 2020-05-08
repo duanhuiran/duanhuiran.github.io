@@ -26,7 +26,7 @@
 }
 
 .card-adjust-up{
-  margin-top: -15%;
+  margin-top: -20%;
 }
 
 .scroll-card {
@@ -256,7 +256,7 @@
   font-style: italic;
   color: rgb(53, 67, 54);
   font-size: 0.5em;
-  transform: scale(0.8);
+  transform: translateY(6px);
 }
 
 .aligncenter {
@@ -279,7 +279,7 @@
   font-style: italic;
   color: rgb(53, 67, 54);
   font-size: 0.5em;
-  transform: scale(0.8);
+  transform: translateY(6px);
 }
 
 .underline {
@@ -287,6 +287,7 @@
   height: 1px;
   background: rgb(53, 67, 54);
   margin-top: 0px;
+  transform: translateY(3px);
 }
 
 .annotation {
@@ -527,7 +528,7 @@ background: hsl(3, 95%, 29%); */
 #cover-border {
   /* margin: 0;
   margin-top: 4px; */
-  width: 90%;
+  width: 100%;
   left: 0;
   right: 0;
   margin: auto;
@@ -554,18 +555,18 @@ background: hsl(3, 95%, 29%); */
 }
 
 .cover-title {
+  display: none;
+}
+
+.cover-title-M{
   padding: 5%;
   padding-top: 0;
   padding-bottom: 0;
   display: inline-block;
   text-align: center;
-  /* font-family: 'Playfair Display SC', 'Lato', "Garamond", "Palatino", 'Times'; */
   font-family: 'Spectral SC', serif;
   font-size: 2em;
   color: rgb(255, 193, 7);
-  /* border-top: 2px solid rgba(255, 193, 7, 0.4); */
-  /*
-  background: rgba(90, 9, 5, 0.85); */
 }
 
 .cover-title-span {
