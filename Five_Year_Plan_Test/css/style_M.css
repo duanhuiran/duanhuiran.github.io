@@ -256,7 +256,7 @@
   font-style: italic;
   color: rgb(53, 67, 54);
   font-size: 0.5em;
-  transform: translateY(6px);
+  transform: translateY(5px);
 }
 
 .aligncenter {
@@ -279,7 +279,7 @@
   font-style: italic;
   color: rgb(53, 67, 54);
   font-size: 0.5em;
-  transform: translateY(6px);
+  transform: translateY(5px);
 }
 
 .underline {
@@ -555,7 +555,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .cover-title {
-  display: none;
+  display: none !important;
 }
 
 .cover-title-M{
