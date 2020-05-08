@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>five year plan</title>
+  <!-- <style> body {padding: 0; margin: 0;} </style> -->
+  <script src="lib/pageable.min.js"></script>
+  <script language="javascript" type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Word.js"></script>
+  <script src="lib/p5.js"></script>
+
+  <script src="lib/index.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/pageable.min.css" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  
+  <script>
+
+        var setStyle = function(cssArr) {
+        var i = 0,
+        len = cssArr.length;
+        for (i; i < len; i++) {
+            document.write('<link rel="stylesheet" href="' + cssArr[i] + '">');
+        }
+    };
+
+
+
+    // 判断是否移动端
+    function goPAGE() {
+        if ((navigator.userAgent.match(/(phone|pod|iPhone|iPod|ios|Android|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            // window.location.href="index_M.html";
+            //判断访问环境是 移动端 则加载以下样式
+            setStyle(['css/style_M.css']);
+
+        }
+        else {
+
+            // window.location.href="index_M.html"; 
+            setStyle(['css/style.css']);
+
+
+        }
+    }
+
+    goPAGE();</script>
+
+  <link rel="stylesheet" href="css/animate.css">
+
+  <script>
+    $(document).ready(function() {
+      var hash = window.location.hash;
+      if (hash) {
+        setTimeout(function() {
+          document.location.href = window.location.href.split('#')[0];
+        }, 100);
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="loading-page">
+    <div class="cell">
+      <div class="pl pl-leapfrog"></div>
+      <div class="pl-name">L O A D I N G</div>
+      <div class="pl-annotation">CGTN recommends using Chrome or Firefox for a better browsing experience.</div>
+    </div>
+  </div>
+
+  <div id="progress-container">
+    <div class="progress-bar" id="upperBar"></div>
+  </div>
+  <div id="cover-bg">
+    <p id="cover-para"></p>
+  </div>
+  <div id="upper">
+    <div id="styled-bars">
+      <div class="upper-bar"></div>
+      <div class="under-bar"></div>
+    </div>
+
+    <div id="menu">
+      <div id="credit">
+        <span id="back"><img class="credit-img" src="img/credit.png" alt="credit">Back to top</span><span class="vertical-line">|</span><span id="source"><img class="credit-img" src="img/back.png" alt="credit">Source & Share</span><span
+          class="vertical-line">|</span><span><a href="https://www.cgtn.com/"><img id="explore-cgtn" src="img/cgtn.png" alt="cgtn"></a></span>
+      </div>
+      <div id="menu-guide">
+        <a class="scroll-down-img"></a>
+        <p class="menu-guide-text">Explore</p>
+      </div>
+      <div id="menu-button">
+        <!-- <p class = "menu-guide">Explore sections that are</p> -->
+        <span class="button-border"><button id="Task" class="button">Objectives</button></span>
+        <span class="button-border"><button id="Manufacturing" class="button">Industry</button></span>
+        <span class="button-border"><button id="Agriculture" class="button">Agriculture</button></span>
+        <span class="button-border"><button id="Health" class="button">Health</button></span>
+        <span class="button-border"><button id="Democracy" class="button">Governance</button></span>
+        <!-- <span class = "button-border"><button id = "Reform" class = "button">Reform</button></span> -->
+        <span class="button-border"><button id="Tech" class="button">Sci & Tech</button></span>
+        <span class="button-border"><button id="Environment" class="button">Environment</button></span>
+        <span class="button-border"><button id="Trade" class="button">Trade</button></span>
+        <span class="button-border"><button id="Defence" class="button">Defense</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="guide-to-PC">
+        <p>*CGTN recommends exploring the detailed database on the computer.</p>
+  </div>
+
+  <div id="container">
+    <div id="fyp-head">
+      <div id="head-content0" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1953</p>
+          <p class="aligncenter">I</p>
+          <p class="alignright">1957</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">1st Five Year Plan</div>
+        <div class="annotation_M">1st</div>
+      </div>
+
+      <div id="head-content1" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1986</p>
+          <p class="aligncenter">VII</p>
+          <p class="alignright">1990</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">7th Five Year Plan</div>
+        <div class="annotation_M">7st</div>
+      </div>
+
+      <div id="head-content2" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1991</p>
+          <p class="aligncenter">VIII</p>
+          <p class="alignright">1995</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">8th Five Year Plan</div>
+        <div class="annotation_M">8st</div>
+      </div>
+
+      <div id="head-content3" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1996</p>
+          <p class="aligncenter">IX</p>
+          <p class="alignright">2000</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">9th Five Year Plan</div>
+        <div class="annotation_M">9st</div>
+      </div>
+
+      <div id="head-content4" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2001</p>
+          <p class="aligncenter">X</p>
+          <p class="alignright">2005</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">10th Five Year Plan</div>
+        <div class="annotation_M">10st</div>
+      </div>
+
+      <div id="head-content5" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2006</p>
+          <p class="aligncenter">XI</p>
+          <p class="alignright">2010</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">11th Five Year Plan</div>
+        <div class="annotation_M">11st</div>
+      </div>
+
+      <div id="head-content6" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2011</p>
+          <p class="aligncenter">XII</p>
+          <p class="alignright">2015</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">12th Five Year Plan</div>
+        <div class="annotation_M">12st</div>
+      </div>
+
+      <div id="head-content7" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2016</p>
+          <p class="aligncenter">XIII</p>
+          <p class="alignright">2020</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <div class="annotation">13th Five Year Plan</div>
+        <div class="annotation_M">13st</div>
+      </div>
+
+    </div>
+    <div id="theCanvas"></div>
+  </div>
+
+  <div id="scroll-page">
+    <div data-anchor="Page 0" class="">
+      <div id="cover-border">
+        <div class="cover-img-div"><img class="cover-img" src="img/cover-star.png"></div>
+        <div id="cover-content">
+          <h1 class="cover-title"><span class="cover-title-span">&#8200;&#8200;Designing the future:&#8200;&#8200;<br/> &#8200;&#8200;China's Five-Year Plans&#8200;&#8200;</span> <span class="sub-cover-content">1953 - 2020</span></h1>
+          <p id="CGTNlogo2" class="CGTNlogo">
+            <a href="https://www.cgtn.com/"> <img src="img/cgtn.png" alt="CGTN"></a>
+          </p>
+        </div>
+        <p id="scrollDown" class="scroll-down"><span class="scroll-down-text">Scroll to take the tour</span></p>
+        <a class="scroll-down-link scroll-down-arrow"></a>
+      </div>
+    </div>
+
+    <section data-anchor="Page 1">
+      <div class="card-border">
+        <div id="card1" class="scroll-card">
+          <!-- <h1 class="card-title">intro1</h1> -->
+          <p>China's Five-Year Plan (FYP) is one of the country's most important<span class="stressed">policy blueprints.</span> Drawn up every five years since 1953, it sets <span class="stressed-long"> medium-term goals for China's social and
+              economic development</span> and is the barometer against which
+            progress is measured. </p>
+          <p>2020 is the last year of the 13th Five-Year Plan, which was adopted on March 15, 2016. The 14th plan (2021–2025) is currently being developed.</p>
+          <p class="scroll-down-small scroll-down-small_M"><a class="scroll-down-link-small scroll-down-arrow"></a><span class="scroll-down-text-small">Continue to read or <span id="toExplore">skip to the database.</span></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 2">
+      <div class="card-border">
+        <div id="card2" class="scroll-card">
+          <!-- <h1 class="card-title">Show All Texts</h1> -->
+          <!-- <p>显示所有文本，一五字数最多。</p> -->
+          <p>Here shows the text of China's FYPs*.</p>
+          <p>The first FYP, being the foundation for future such policies, is <span class="stressed-long"> longer than all the rest.</span> </p>
+          <p>By comparison, the number of policies drop for several years after 1953 but start to climb consistently in 2006.</p>
+          <p class="annotation" id="card-note">*The second to sixth FYPs are excluded, as they are not available.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 3">
+      <div class="card-border">
+        <div id="card3" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 4">
+      <div class="card-border">
+        <div id="card4" class="scroll-card">
+          <h1 class="card-title">Setting economic goals is the priority of each FYP</h1>
+          <!-- <p>简介这是显示了所有的章节连线,并显示所有的重点词。</p> -->
+          <p>China's Five-Year Plan lays out specific economic targets, such as GDP growth ratesand social development goals in areas such as healthcare and the environment over five years.</p>
+          <p>The primary objectives include <span class="stressed">economic reform</span> and <span class="stressed">industrial restructuring</span>, which has paved the path for establishing and improving the socialist market economy and formed the
+            foundation for transforming the mode of economic growth and
+            optimizing economic structure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 5">
+      <div class="card-border">
+        <div id="card5" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section data-anchor="Page 6">
+      <div class="card-border">
+        <div id="card6" class="scroll-card"> -->
+    <!-- <h1 class="card-title">Task2</h1> -->
+    <!-- <p>高亮所有的重点词，经济建设和产业调整是中国的中心</p> -->
+    <!-- <p>The primary objectives include economic reform and industrial restructuring, which has paved the path for establishing and improving the Socialist market economy and formed the foundation for transforming the mode of economic growth and
+            optimizing economic structure.</p> -->
+    <!-- </div>
+      </div>
+    </section> -->
+
+    <!-- <section data-anchor="Page 6">
+      <div class="card-border">
+        <div id="card6" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+        </div>
+      </div>
+    </section> -->
+
+    <section data-anchor="Page 6">
+      <div class="card-border info-card">
+        <div id="card6" class="scroll-card">
+          <!-- <h1 class="card-title">Task3 - info1</h1> -->
+          <!-- <p>背景图形不变，显示gdp增长图1，描述任务完成情况。</p> -->
+
+          <p>An average annual <span class="stressed"> GDP growth rate</span> was set between the Seventh and the 12th FYPs, as an important indicator measuring national economy for the next five years.
+          </p>
+          <p>Data show that all targets were fulfilled and <span class="stressed-long">most actual growth rates far exceeded the predicted numbers.</span></p>
+          <img class="infographic" src="img/gdp-growth.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 7">
+      <div class="card-border">
+        <div id="card7" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 8">
+      <div class="card-border info-card">
+        <div id="card8" class="scroll-card">
+          <!-- <h1 class="card-title">Task4 - info2</h1> -->
+          <!-- <p>背景图形不变，显示中国三个产业结构变化信息图，描述变化。</p> -->
+          <p><span class="stressed-industrial">The three industries' share </span>of the GDP shows a smaller proportion of the primary sector, a bigger shares of the tertiary industry and a steadily growing secondary sector in the overall picture.
+          </p>
+          <img class="infographic" src="img/industrial.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 9">
+      <div class="card-border">
+        <div id="card9" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 10">
+      <div class="card-border">
+        <div id="card10" class="scroll-card">
+          <h1 class="card-title">Industry being the foundation of China's economic boom</h1>
+          <!-- <p>显示所有的工业文字，介绍一五的工业文字最多。</p> -->
+          <p>The industrial sector has been the primary driver of China's economic development and the focus to shift China's economic structure into a higher quality growth pattern. </p>
+          <p>Here we highlight all the text related to industry.</p>
+          <p>As we can see, the related content accounts for nearly a half of the First FYP.</p>
+          <p>As China diversifies its approach to national development, the number of policies directly related to industry have fallen.</p>
+          <div class="legend"> <img class="legend-img" src="img/manu-legend.png"><span class="legend-text">Industry</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 11">
+      <div class="card-border">
+        <div id="card11" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 12">
+      <div class="card-border">
+        <div id="card12" class="scroll-card card-adjust">
+          <!-- <h1 class="card-title">Manufacturing2</h1>
+          <p>显示所有工业的章节连线，XX五，XX五独立成章</p> -->
+          <p>Here shows the titles of the chapters or sections on industry.</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 13">
+      <div class="card-border">
+        <div id="card13" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 14">
+      <div class="card-border">
+        <div id="card14" class="scroll-card card-adjust">
+          <!-- <p>一五新中国注重重工业，一五的引用文字出现。</p>
+          <h1 class="card-title">Manufacturing3</h1> -->
+          <p>During the First FYP, China focused on developing its <span class="stressed">heavy industry.</span></p>
+
+          <!-- <img class="infographic" src="img/manufacturing2.png"> -->
+        </div>
+
+      </div>
+    </section>
+
+    <section data-anchor="Page 15">
+      <div class="card-border">
+        <div id="card15" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 16">
+      <div class="card-border info-card">
+        <div id="card16" class="scroll-card">
+          <!-- <h1 class="card-title">Manufacturing4</h1>
+          <p>出现工业信息图1，介绍虽然一五工业猛增之后，之后几个五工业增长翻车，工业在后来五年计划中地位不再突出。</p> -->
+          <p>The growth rate of the secondary industry reached its peak after the First FYP period, and tended to fluctuate from year to year after that. </p>
+          <img class="infographic" src="img/industry-growth-65.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 17">
+      <div class="card-border">
+        <div id="card17" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 18">
+      <div class="card-border info-card">
+        <div id="card18" class="scroll-card">
+          <!-- <h1 class="card-title">Manufacturing5</h1>
+          <p>信息图2出现，十三五引用文字出现，工业增长在八五后下降，中国希望制造业升级，中国制造2025在十三五提出。</p> -->
+          <p><span class="stressed">"Made in China 2025,"</span> a 10-year national strategy unveiled in 2015, was put in the 13th FYP in a bid to upgrade the country's manufacturing sector.</p>
+          <img class="infographic" src="img/manufacture.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 19">
+      <div class="card-border">
+        <div id="card19" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 20">
+      <div class="card-border">
+        <div id="card20" class="scroll-card">
+          <h1 class="card-title">Agricultural production enables China to feed its one fifth global population</h1>
+
+          <p>China is the world's <span class="stressed-long">largest agricultural economy</span>, producing a fourth of the world's grains.</p>
+          <p>Content related to agriculture is highlighted. Most FYPs make fewer references to agriculture than industry.</p>
+          <div><img class="legend-img" src="img/manu-legend.png"><span class="legend-text">Industry</span><span class="white-space"></span><img class="legend-img" src="img/agri-legend.png"><span class="legend-text">Agriculture</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 21">
+      <div class="card-border">
+        <div id="card21" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 22">
+      <div class="card-border">
+        <div id="card22" class="scroll-card card-adjust">
+          <!-- <h1 class="card-title">Agriculture2</h1>
+          <p>所有农业章节显示，农业在十一五独立成章。</p> -->
+          <p>Here shows the titles of the chapters or sections on agriculture.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section data-anchor="Page 23">
+      <div class="card-border">
+        <div id="card23" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section data-anchor="Page 24">
+      <div class="card-border info-card">
+        <div id="card24" class="scroll-card">
+          <!-- <h1 class="card-title">Agriculture3-info1</h1>
+          <p>农业增长率信息图出现。十一五的农业增长率有显著的增高。</p> -->
+          <p>Agriculture remains a vital sector in the national economy, though its share of China's GDP has been decreasing.</p>
+          <img class="infographic" src="img/agriculture.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 25">
+      <div class="card-border">
+        <div id="card25" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 26">
+      <div class="card-border">
+        <div id="card26" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+          <!-- <p>十一五引用文字出现，不出现其他文字，会被挡住(待删)。</p> -->
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 27">
+      <div class="card-border">
+        <div id="card27" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Continue to read</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 28">
+      <div class="card-border info-card">
+        <div id="card28" class="scroll-card">
+          <!-- <h1 class="card-title">Agriculture5-info2</h1>
+          <p>收入差距信息图出现，十一五提出农民收入问题后，十一五后收入差距缩小。</p> -->
+          <p>Plans for rural development appear in the second part of the 11th FYP, called<span class="stressed"> "Construction of New Social Villages." </span>In the subsequent FYPs, rural development plans make up a whole chapter and are listed at
+            the top.</p>
+          <img class="infographic" src="img/income.jpg">
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 29">
+      <div class="card-border">
+        <div id="card27" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">Contine to explore the other stories...</p>
+        </div>
+      </div>
+    </section>
+
+    <section data-anchor="Page 30">
+      <div id="card29" class="scroll-card">
+        <div id="explore-title" class="card-border">
+          <p>explore other sections....</p>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <div id="manufacture-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We take the capital construction of heavy industry as the focus of the First FYP for the development of the national economy and start with the 156 industrial projects the
+        Soviet Union designed to help China." </span></p>
+  </div>
+
+  <div id="manufacture-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will fully implement the 'Made in China 2025' action plan… to foster a new competitive edge in manufacturing." </span></p>
+  </div>
+
+  <div id="agriculture-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will continue to give top priority to resolving the 'three rural issues,'… promote the construction of a new socialist countryside, and promote the sound development of
+        urbanization."</span></p>
+  </div>
+
+  <div id="manufacture-text1-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We take the capital construction of heavy industry as the focus of the First FYP for the development of the national economy and start with the 156 industrial projects the
+        Soviet Union designed to help China." </span></p>
+  </div>
+
+  <div id="manufacture-text2-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will fully implement the 'Made in China 2025' action plan… to foster a new competitive edge in manufacturing." </span></p>
+  </div>
+
+  <div id="agriculture-text1-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will continue to give top priority to resolving the "three rural issues,"… promote the construction of a new socialist countryside, and promote the sound development of
+        urbanization. "</span></p>
+  </div>
+
+  <div id="health-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">"Establish a robust emergency mechanism for responding to public health emergencies and improve disease prevention and control and medical treatment capacity. Improve the
+        condition of medical and public health institutions and strengthen the building of a professional contingent. "</span></p>
+  </div>
+
+  <div id="health-text2" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">"China will strengthen the prevention and control of major communicable diseases, strengthen port health and quarantine capacity and limit entry to keep out major communicable
+        diseases. "</span></p>
+  </div>
+
+  <div id="democracy-text2" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">"China's legal framework shifted from focusing more on the static rules and systems of the law, a legal system, to one that aims to achieve social and justice by limiting public
+        power and safeguarding private rights under the rule of law."</span></p>
+    <p class="text-highlight-p"><span class="text-box-span">"The shift in approach is concretized in the terminology used to define the country's legal framework before and after the 10th FYP, which began in 2001."</span></p>
+    <p class="text-highlight-p"><span class="text-box-span">"Since the 10th FYP, the phrase "a country based on the rule of law" replaces "a country with legal system" and the systems of the socialist rule of law, reflecting China's desire to achieve
+        the overarching goal of modernizing the country's system and capacity for governance based on the rule of law."</span></p>
+  </div>
+
+  <div id="democracy-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">Developing socialist democracy and improving the socialist rule of law is always a key topic in every FYP. Its purpose is to give full expression to the will of the people,
+        protect their rights and interests, spark their creativity, and provide systemic and institutional guarantees to ensure the people run the country.</span></p>
+    <p class="text-highlight-p"><span class="quote-span text-box-span">China's two key political systems, the National People's Congress and the Chinese People's Political Consultative Conference, also known as the annual "Two Sessions," and its
+        system of community-level self-governance are first mentioned in the Eighth FYP. </span></p>
+  </div>
+
+  <div id="rd-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"All scientific research institutions should strengthen their research on practical issues related to nation building. "</span></p>
+  </div>
+
+  <div id="rd-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"China will increase its proportion of research and development expenditure to more than 1.5 percent of the GDP. "</span></p>
+  </div>
+
+  <div id="rd-text3" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"With scientific and technological innovation as the core and talent development as the support, we will integrate scientific and technological innovation with
+        entrepreneurship and innovation to foster more innovation-driven, cutting-edge development. "</span></p>
+  </div>
+
+  <div id="environment-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"Carbon dioxide emissions per unit of GDP will decrease by 17 percent... China must significantly reduce its energy consumption and CO2 emissions, as well as effectively
+        regulate greenhouse gas (GHG) emissions. "</span></p>
+  </div>
+
+  <div id="trade-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will strengthen the economic cooperation of the socialist bloc led by the Soviet Union, expand our trade with the Soviet Union and steadily increase our trade with the
+        people's democratic countries.....We will consolidate state control of foreign trade to prevent capitalist attacks while protecting China's socialist structure." </span></p>
+  </div>
+
+  <div id="trade-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"China will continue to reform the foreign trade management system and further promote foreign trade…. China will also further expand the operation rights of local
+        governments and departments and relax restrictions on export-oriented enterprises to encourage them to develop foreign trade."</span></p>
+  </div>
+
+  <div id="trade-text3" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"To meet its commitment to joining the WTO, China will gradually lower tariffs according to the country's socioeconomic status and industrial structure. China will also
+        gradually open up services such as banking, insurance, telecommunications, foreign trade, domestic trade and tourism."</span></p>
+  </div>
+
+  <div id="defence-text1" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"The growth of national defense and administrative costs must be properly controlled."</span></p>
+  </div>
+
+  <div id="defence-text2" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will adhere to the principles of state leadership, system innovation, market operation and civil-military compatibility, coordinate economic national defense
+        construction, fully rely on and utilize social resources, improve national defense strength and military capabilities, and vigorously promote the open sharing of military and land resources as well as the mutual transfer of military and
+        civilian technologies."</span></p>
+  </div>
+
+  <div id="task-text1" class="hover-text-bottom">
+    <p class="text-highlight-p"><span class="quote-span text-box-span">"Economic development remains the center of each FYP. Content on economic development and industrial restructuring is put on the top list of the targets and tasks for each
+        FYP."</span></p>
+  </div>
+
+  <div id="cast" class="cast">
+    <div id="close" class="close">
+      <img src="img/close.png" alt="close" />
+    </div>
+    <div class="cast-fix">
+      <div id="Note" class="Note">
+        <h2 class = "credit-h2">Source</h2>
+        <p><span class = "credit-p">Data sources:</span><span class = "space"></span>China's Five-Year Plans (The second to sixth FYPs are excluded, as they are not available).</p>
+        <p>*Please note: The analysis in this project is based on the Chinese version of the Five-Year Plans.</p>
+      
+
+      </div>
+      <!--       <div id="castLine" class="castLine"></div> -->
+      <div id="Credit" class="Credit">
+        <h2 class = "credit-h2">Credits</h2>
+        <p><span class = "credit-p">Editors:</span><span class = "space"></span>  Zhao Hong, Shi Tao, Le Tian</p>
+        <p><span class = "credit-p">Copy Editor:</span><span class = "space"></span>  Claudine Housen</p>
+        <p><span class = "credit-p">Chief Editor:</span><span class = "space"></span>  Chen Ran </p>
+        <p><span class = "credit-p">Data Editors & Visualization:</span><span class = "space"></span>  Qin Zhaoying, Zhou Rui, Shi Tao, Li Yixiao </p>
+        <p><span class = "credit-p">Visual & Interactive Designer:</span><span class = "space"></span>  Qin Zhaoying <p>
+            <p><span class = "credit-p">Interactive Developer:</span><span class = "space"></span>  Qin Zhaoying, Duan Huiran (Intern) </p>
+            <p><span class = "credit-p">Senior Consultant:</span><span class = "space"></span>  Xia Jixuan </p>
+            <p><span class = "credit-p">Multimedia Producer:</span><span class = "space"></span>  Xu Jiye </p>
+            <p><span class = "credit-p">Producer:</span><span class = "space"></span> Chen Ran </p>
+            <p><span class = "credit-p">Supervisor:</span><span class = "space"></span>  Zhang Shilei</p>
+      </div>
+
+
+      <div id="C_Lab" class="C_Lab">
+        <img src="img/C_Lab.png" alt="C_Lab">
+      </div>
+
+      <!-- 平台分享 -->
+      <div id="Copyright" class="Copyright row section text-center">
+        <p style="width: 100%">Copyright &copy; 2020 CGTN. Beijing ICP prepared NO. 16065310-3</p>
+
+        <div id="shares" class="shares">
+          <div id="facebook" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/facebook" target="_Blank">
+              <img src="img/fb.png" alt="facebook" /></a>
+          </div>
+          <div id="tweet" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/twitter" target="_Blank">
+              <img src="img/tw.png" alt="tweet" /></a>
+          </div>
+          <div id="youtube" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/youtube" target="_Blank">
+              <img src="img/yb.png" alt="tweet" /></a>
+          </div>
+          <div id="ins" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/instagram" target="_Blank">
+              <img src="img/ins.png" alt="tweet" /></a>
+          </div>
+          <div id="pin" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/pinterest" target="_Blank">
+              <img src="img/pin.png" alt="tweet" /></a>
+          </div>
+          <div id="tumblr" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/tumblr" target="_Blank">
+              <img src="img/tumblr.png" alt="tweet" /></a>
+          </div>
+          <div id="miaopai" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/miaopai" target="_Blank">
+              <img src="img/mp.png" alt="tweet" /></a>
+          </div>
+          <div id="wechat" class="iconLOGOs">
+            <img src="img/wechat.png" alt="tweet" /></div>
+          <div id="weibo" class="iconLOGOs">
+            <a href="//www.cgtn.com/socialmedia/weibo" target="_Blank">
+              <img src="img/weibo.png" alt="tweet" /></a>
+          </div>
+          <div id="douyin" class="iconLOGOs">
+            <!--                   <a href="https://www.iesdouyin.com/share/user/98874766362?u_code=14fac7l9l&sec_uid=MS4wLjABAAAAepyfQEEHOZeV9Mfkz9YR4-gQCETpZZ42slTRcGNC_f4&utm_campaign=client_share&app=aweme&utm_medium=ios&tt_from=copy&utm_source=copy" target="_Blank"> -->
+            <img src="img/dy.png" alt="tweet" /></div>
+        </div>
+        <div class="wechat_detail"><img src="img/wechat_detail.jpg" alt=""></div>
+      </div>
+    </div>
+    <!-- 平台分享 -->
+
+  </div>
+<!-- <script>
+  
+        var setScript = function(scriptArr) {
+        var s = 0,
+        lens = scriptArr.length;
+        for (s; s < lens; s++) {
+            document.write('<script src="' + scriptArr[s] + '">');
+        }
+    };
+
+        function goPAGE() {
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            // window.location.href="index_M.html";
+            //判断访问环境是 移动端 则加载以下样式
+            setScript(['sketch.js']);
+
+        }
+        else {
+            // window.location.href="index_M.html"; 
+            setScript(['sketch_M.js']);
+
+        }
+    }
+
+    goPAGE();
+
+
+</script> -->
+
+  <script type="text/javascript" src="sketch.js"></script>
+
+</body>
+
+</html>
