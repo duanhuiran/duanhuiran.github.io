@@ -1083,7 +1083,7 @@ function draw() {
           $("#sectionContentDiv51").removeClass("large");
           $("#chapterContentDiv511").removeClass("medium-s");
         }, 1500);
-
+        if (windowW>900) {
         setTimeout(function() {
           $("#sectionContentDiv51").addClass("large");
           $("#chapterContentDiv511").addClass("medium-s");
@@ -1094,10 +1094,28 @@ function draw() {
           $("#agriculture-text1-story").css({
             'position': 'fixed',
             'top': agricultureTop + 20,
-            'left': left
+            'right': left
+          }).show();
+          textAnimation("3s");
+        }, 1700)}
+
+        else if(windowW<900){
+          setTimeout(function() {
+          $("#sectionContentDiv51").addClass("large");
+          $("#chapterContentDiv511").addClass("medium-s");
+          // var left = $("#chapterContentDiv511").offset().left + fypDivWidth - hoverWidth;
+          //var top = $("#chapterContentDiv511").offset().top - $(window).scrollTop() + 80;
+          $("#sectionContentDiv51").removeClass("large");
+          $("#chapterContentDiv511").removeClass("medium-s");
+          $("#agriculture-text1-story").css({
+            'position': 'fixed',
+            'top': agricultureTop + 20,
+            'right': 15
           }).show();
           textAnimation("3s");
         }, 1700)
+        }
+
       }
       animationNodes("Agriculture", 9);
     }
