@@ -1402,7 +1402,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Copyright p {
-  width: 70%;
+  width: 60% !important;
   display: block;
   margin: 0 auto;
   font-size: 12px;
@@ -1445,11 +1445,11 @@ background: hsl(3, 95%, 29%); */
 .wechat_detail {
   display: none;
   position: absolute;
-  width: 10vw;
-  height: 10vw;
+  width: 100px;
+  height: 100px;
   left: 0;
   right: 0;
-  bottom: 30px;
+  bottom: 60px;
   margin: auto;
 }
 
