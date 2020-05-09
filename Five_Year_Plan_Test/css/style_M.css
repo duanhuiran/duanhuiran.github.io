@@ -1325,7 +1325,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .close {
-  display: none;
+  display: none !important;
   cursor: pointer;
   position: absolute;
   display: block;
@@ -1336,6 +1336,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .close img {
+  display: none !important;
   position: absolute;
   display: block;
   width: 100%;

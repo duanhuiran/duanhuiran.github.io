@@ -1214,7 +1214,7 @@ function draw() {
       $("#menu-guide").hide();
       $("#menu-button").hide();
       $(".cast").show(1000);
-      $("#guide-to-PC").show(2000);
+      // $("#guide-to-PC").show();
 
       }
       //}
