@@ -1397,7 +1397,7 @@ background: hsl(3, 95%, 29%); */
 .Copyright p {
   display: block;
   margin: 0 auto;
-  font-size: 10px;
+  font-size: 9px !important;
   text-align: center;
   color: #b4b2a8;
   /*font-weight: 600;*/
