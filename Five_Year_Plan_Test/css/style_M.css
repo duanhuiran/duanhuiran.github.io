@@ -595,7 +595,7 @@ background: hsl(3, 95%, 29%); */
   border-bottom: 2px solid #FFC107;
   border-top: 2px solid #FFC107;
   font-family: -webkit-pictograph, "Times";
-  word-spacing: 0.2em;
+  word-spacing: -3px;
 }
 /* .cover-span {
   font-family: "Lato", "Garamond", "Palatino", 'Times';
@@ -1395,9 +1395,10 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Copyright p {
+  width: 80%;
   display: block;
   margin: 0 auto;
-  font-size: 9px !important;
+  font-size: 12px;
   text-align: center;
   color: #b4b2a8;
   /*font-weight: 600;*/
