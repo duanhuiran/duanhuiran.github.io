@@ -1412,13 +1412,13 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Copyright .shares {
-  width: 100%;
+  width: 50%;
   /*padding: 1vw;*/
   position: relative;
   margin: 10px auto;
   display: flex;
   align-items: flex-start;
-  /*flex-wrap: wrap;*/
+  flex-wrap: wrap;
 }
 
 .Copyright .shares .iconLOGOs:hover {
@@ -1426,18 +1426,19 @@ background: hsl(3, 95%, 29%); */
   filter: hue-rotate(170deg);
 }
 
+
+
 .Copyright .shares .iconLOGOs {
   cursor: pointer;
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 10%;
   position: relative;
   transition: all 0.5s;
 }
 
 .Copyright .shares .iconLOGOs img {
-  padding: 20%;
-  width: 100%;
-  /*height: 80%*/
+  padding: 10%;
+  width: 80%;
   margin: 0 auto;
   display: block;
 }

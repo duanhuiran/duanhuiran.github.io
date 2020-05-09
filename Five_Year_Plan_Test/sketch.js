@@ -594,6 +594,7 @@ function draw() {
       cover = true;
       $("#container, #upper").hide();
       $(".fypDiv").hide();
+
     }
 
     if (element_in_view[0]) { // intro1 with cover bg.
@@ -625,6 +626,7 @@ function draw() {
         });
         shiftMode("texts", "slow"); // showing effect needs rethinking.
         $(".section-content, .text-content").show();
+
       }
     }
 
@@ -1213,7 +1215,8 @@ function draw() {
       $("#menu").show();
       $("#menu-guide").hide();
       $("#menu-button").hide();
-      $(".cast").show(1000);
+      $(".things-PC").hide()
+      $(".cast").show();
       // $("#guide-to-PC").show();
 
       }
