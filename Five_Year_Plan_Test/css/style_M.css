@@ -587,6 +587,16 @@ background: hsl(3, 95%, 29%); */
   font-family: -webkit-pictograph, "Times";
 }
 
+.cover-title-span-M {
+  font-family: 'Spectral SC', serif;
+  /*font-size: larger;*/
+  background: rgb(156, 48, 13);
+  line-height: 1.5;
+  border-bottom: 2px solid #FFC107;
+  border-top: 2px solid #FFC107;
+  font-family: -webkit-pictograph, "Times";
+  word-spacing: 0.2em;
+}
 /* .cover-span {
   font-family: "Lato", "Garamond", "Palatino", 'Times';
   margin-top: 2%;
@@ -1258,11 +1268,6 @@ background: hsl(3, 95%, 29%); */
   z-index: 10;
 }
 
-#credit {
-  position: fixed;
-  right: 3%;
-  top: 2.5%;
-}
 
 #credit span {
   font-size: 0.6em;
@@ -1319,6 +1324,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Note {
+  line-height: 1.8;
   position: relative;
   display: block;
   margin: 1% 1% 1% 1%;
@@ -1367,6 +1373,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Credit {
+  line-height: 1.8;
   position: relative;
   display: block;
   margin: 0 1% 0% 1%;
@@ -1390,7 +1397,7 @@ background: hsl(3, 95%, 29%); */
 .Copyright p {
   display: block;
   margin: 0 auto;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   color: #b4b2a8;
   /*font-weight: 600;*/
