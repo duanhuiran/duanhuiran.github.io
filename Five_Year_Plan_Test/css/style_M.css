@@ -595,7 +595,7 @@ background: hsl(3, 95%, 29%); */
   border-bottom: 2px solid #FFC107;
   border-top: 2px solid #FFC107;
   font-family: -webkit-pictograph, "Times";
-  word-spacing: -3px;
+  word-spacing: -5px;
 }
 /* .cover-span {
   font-family: "Lato", "Garamond", "Palatino", 'Times';
@@ -1249,6 +1249,12 @@ background: hsl(3, 95%, 29%); */
   height: 60px;
 }
 
+#credit{
+  position: fixed;
+  right: 3%;
+  top: 2.5%;
+}
+
 .blank-card {
   padding-top: 120%;
   text-align: center;
@@ -1373,6 +1379,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Credit {
+
   line-height: 1.8;
   position: relative;
   display: block;
@@ -1395,7 +1402,7 @@ background: hsl(3, 95%, 29%); */
 }
 
 .Copyright p {
-  width: 80%;
+  width: 70%;
   display: block;
   margin: 0 auto;
   font-size: 12px;
