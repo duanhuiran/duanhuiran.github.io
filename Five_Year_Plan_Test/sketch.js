@@ -594,6 +594,7 @@ function draw() {
       cover = true;
       $("#container, #upper").hide();
       $(".fypDiv").hide();
+      this.$router.replace("http://localhost:8080/duanhuiran.github.io/Five_Year_Plan_Test/");
 
     }
 
@@ -604,14 +605,17 @@ function draw() {
         $("#container, #upper").hide();
         $(".fypDiv").hide();
         first_reach_element[1] = true;
+        this.$router.replace("http://localhost:8080/duanhuiran.github.io/Five_Year_Plan_Test/");
       }
       //put the cover background code here.
+
     }
 
     if (element_in_view[1]) { // show all the fyp texts.
       if (!first_reach_element[2]) { //upscrolled to fyp texts.
         first_reach_element[2] = true;
         //do nothing
+        this.$router.replace("http://localhost:8080/duanhuiran.github.io/Five_Year_Plan_Test/");
       }
 
       if (first_reach_element[1]) {
@@ -626,7 +630,7 @@ function draw() {
         });
         shiftMode("texts", "slow"); // showing effect needs rethinking.
         $(".section-content, .text-content").show();
-
+        this.$router.replace("http://localhost:8080/duanhuiran.github.io/Five_Year_Plan_Test/");
       }
     }
 
