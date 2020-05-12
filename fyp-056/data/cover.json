@@ -1,0 +1,996 @@
+{
+  "words":[
+   {
+     "Keyword": "工业",
+     "size": "large"
+   },
+   {
+     "Keyword": "建设",
+     "size": "large"
+   },
+   {
+     "Keyword": "生产",
+     "size": "large"
+   },
+   {
+     "Keyword": "发展",
+     "size": "large"
+   },
+   {
+     "Keyword": "农业",
+     "size": "large"
+   },
+   {
+     "Keyword": "增长",
+     "size": "S"
+   },
+   {
+     "Keyword": "经济",
+     "size": "S"
+   },
+   {
+     "Keyword": "技术",
+     "size": "S"
+   },
+   {
+     "Keyword": "商业",
+     "size": "S"
+   },
+   {
+     "Keyword": "设计",
+     "size": "S"
+   },
+   {
+     "Keyword": "运输",
+     "size": "S"
+   },
+   {
+     "Keyword": "社会主义",
+     "size": "large"
+   },
+   {
+     "Keyword": "公私合营",
+     "size": "S"
+   },
+   {
+     "Keyword": "生产能力",
+     "size": "S"
+   },
+   {
+     "Keyword": "合作社",
+     "size": "S"
+   },
+   {
+     "Keyword": "制造",
+     "size": "S"
+   },
+   {
+     "Keyword": "限额",
+     "size": "S"
+   },
+   {
+     "Keyword": "平衡",
+     "size": "S"
+   },
+   {
+     "Keyword": "制度",
+     "size": "S"
+   },
+   {
+     "Keyword": "努力",
+     "size": "S"
+   },
+   {
+     "Keyword": "改革",
+     "size": "large"
+   },
+   {
+     "Keyword": "企业",
+     "size": "large"
+   },
+   {
+     "Keyword": "教育",
+     "size": "large"
+   },
+   {
+     "Keyword": "开发",
+     "size": "S"
+   },
+   {
+     "Keyword": "市场经济",
+     "size": "large"
+   },
+   {
+     "Keyword": "政策",
+     "size": "S"
+   },
+   {
+     "Keyword": "产业结构",
+     "size": "large"
+   },
+   {
+     "Keyword": "国民经济",
+     "size": "large"
+   },
+   {
+     "Keyword": "调整",
+     "size": "S"
+   },
+   {
+     "Keyword": "管理",
+     "size": "large"
+   },
+   {
+     "Keyword": "现代化",
+     "size": "large"
+   },
+   {
+     "Keyword": "资金",
+     "size": "S"
+   },
+   {
+     "Keyword": "产业规模",
+     "size": "large"
+   },
+   {
+     "Keyword": "经济体制",
+     "size": "large"
+   },
+   {
+     "Keyword": "宏观调控",
+     "size": "large"
+   },
+   {
+     "Keyword": "优化",
+     "size": "large"
+   },
+   {
+     "Keyword": "基础设施",
+     "size": "large"
+   },
+   {
+     "Keyword": "精神文明",
+     "size": "large"
+   },
+   {
+     "Keyword": "支柱产业",
+     "size": "S"
+   },
+   {
+     "Keyword": "对外开放",
+     "size": "large"
+   },
+   {
+     "Keyword": "国防",
+     "size": "S"
+   },
+   {
+     "Keyword": "军民融合",
+     "size": "large"
+   },
+   {
+     "Keyword": "技术改造",
+     "size": "S"
+   },
+   {
+     "Keyword": "质量",
+     "size": "S"
+   },
+   {
+     "Keyword": "文化",
+     "size": "large"
+   },
+   {
+     "Keyword": "固定资产",
+     "size": "S"
+   },
+   {
+     "Keyword": "经济效益",
+     "size": "large"
+   },
+   {
+     "Keyword": "消费品",
+     "size": "S"
+   },
+   {
+     "Keyword": "所有制",
+     "size": "S"
+   },
+   {
+     "Keyword": "外汇",
+     "size": "S"
+   },
+   {
+     "Keyword": "西部开发",
+     "size": "large"
+   },
+   {
+     "Keyword": "财政",
+     "size": "S"
+   },
+   {
+     "Keyword": "进出口",
+     "size": "large"
+   },
+   {
+     "Keyword": "利用外资",
+     "size": "S"
+   },
+   {
+     "Keyword": "社会保障",
+     "size": "S"
+   },
+   {
+     "Keyword": "体制改革",
+     "size": "large"
+   },
+   {
+     "Keyword": "消费品",
+     "size": "S"
+   },
+   {
+     "Keyword": "交通运输",
+     "size": "S"
+   },
+   {
+     "Keyword": "劳动力",
+     "size": "S"
+   },
+   {
+     "Keyword": "国民收入",
+     "size": "S"
+   },
+   {
+     "Keyword": "第三产业",
+     "size": "large"
+   },
+   {
+     "Keyword": "农产品",
+     "size": "S"
+   },
+   {
+     "Keyword": "调整结构",
+     "size": "large"
+   },
+   {
+     "Keyword": "现代化治理",
+     "size": "large"
+   },
+   {
+     "Keyword": "城镇化",
+     "size": "large"
+   },
+   {
+     "Keyword": "信息化",
+     "size": "large"
+   },
+   {
+     "Keyword": "高新技术",
+     "size": "S"
+   },
+   {
+     "Keyword": "资源",
+     "size": "S"
+   },
+   {
+     "Keyword": "生态环境",
+     "size": "large"
+   },
+   {
+     "Keyword": "节能减排",
+     "size": "large"
+   },
+   {
+     "Keyword": "公共服务",
+     "size": "large"
+   },
+   {
+     "Keyword": "投资结构",
+     "size": "S"
+   },
+   {
+     "Keyword": "就业",
+     "size": "S"
+   },
+   {
+     "Keyword": "统筹",
+     "size": "S"
+   },
+   {
+     "Keyword": "住房",
+     "size": "S"
+   },
+   {
+     "Keyword": "金融",
+     "size": "S"
+   },
+   {
+     "Keyword": "功能区",
+     "size": "S"
+   },
+   {
+     "Keyword": "布局",
+     "size": "S"
+   },
+   {
+     "Keyword": "文化产业",
+     "size": "S"
+   },
+   {
+     "Keyword": "积极应对气候变化",
+     "size": "large"
+   },
+   {
+     "Keyword": "综合治理",
+     "size": "large"
+   },
+   {
+     "Keyword": "一带一路",
+     "size": "large"
+   },
+   {
+     "Keyword": "平等",
+     "size": "large"
+   },
+   {
+     "Keyword": "效率",
+     "size": "large"
+   },
+   {
+     "Keyword": "小康社会",
+     "size": "large"
+   },
+   {
+     "Keyword": "产业链",
+     "size": "S"
+   },
+   {
+     "Keyword": "脱贫攻坚",
+     "size": "large"
+   },
+   {
+     "Keyword": "环境保护",
+     "size": "large"
+   },
+   {
+     "Keyword": "医疗卫生",
+     "size": "large"
+   },
+   {
+     "Keyword": "保障机制",
+     "size": "S"
+   },
+   {
+     "Keyword": "知识产权",
+     "size": "S"
+   },
+   {
+     "Keyword": "创新能力",
+     "size": "large"
+   },
+   {
+     "Keyword": "依法治国",
+     "size": "large"
+   },
+   {
+     "Keyword": "公平竞争",
+     "size": "S"
+   },
+   {
+     "Keyword": "货币政策",
+     "size": "S"
+   },
+   {
+     "Keyword": "人口老龄化",
+     "size": "S"
+   },
+   {
+     "Keyword": "公共安全",
+     "size": "S"
+   },
+   {
+     "Keyword": "反腐败",
+     "size": "S"
+   },
+   {
+     "Keyword": "多边贸易 自由贸易",
+     "size": "S"
+   },
+   {
+     "Keyword": "《中国制造2025》",
+     "size": "S"
+   },
+   {
+     "Keyword": "改革开放",
+     "size": "large"
+   },
+   {
+     "Keyword": "创新驱动",
+     "size": "large"
+   },
+   {
+     "Keyword": "科教兴国",
+     "size": ""
+   },
+   {
+     "Keyword": "人才强国",
+     "size": "large"
+   },
+   {
+     "Keyword": "社会主义新农村",
+     "size": ""
+   },
+   {
+     "Keyword": "人民代表大会",
+     "size": ""
+   },
+   {
+     "Keyword": "政治文明",
+     "size": ""
+   },
+   {
+     "Keyword": "循环经济",
+     "size": "large"
+   },
+   {
+     "Keyword": "科学发展观",
+     "size": ""
+   },
+   {
+     "Keyword": "人民生活",
+     "size": ""
+   },
+   {
+     "Keyword": "可持续发展战略",
+     "size": "large"
+   },
+   {
+     "Keyword": "大数据战略",
+     "size": ""
+   },
+   {
+     "Keyword": "全球经济治理",
+     "size": ""
+   },
+   {
+     "Keyword": "区域协调发展",
+     "size": "large"
+   },
+   {
+     "Keyword": "健康中国",
+     "size": ""
+   },
+   {
+     "Keyword": "政治协商制度",
+     "size": ""
+   },
+   {
+     "Keyword": "民族区域自治制度",
+     "size": ""
+   },
+   {
+     "Keyword": "新兴产业",
+     "size": ""
+   },
+   {
+     "Keyword": "海洋经济",
+     "size": ""
+   },
+   {
+     "Keyword": "开放型经济",
+     "size": ""
+   },
+   {
+     "Keyword": "城乡建设",
+     "size": "large"
+   },
+   {
+     "Keyword": "经济特区",
+     "size": ""
+   },
+   {
+     "Keyword": "文化创新",
+     "size": ""
+   },
+   {
+     "Keyword": "法制建设",
+     "size": ""
+   },
+   {
+     "Keyword": "Industry",
+     "size": "large"
+   },
+   {
+     "Keyword": "Construction",
+     "size": "large"
+   },
+   {
+     "Keyword": "Production",
+     "size": "large"
+   },
+   {
+     "Keyword": "Development",
+     "size": "large"
+   },
+   {
+     "Keyword": "Agriculture",
+     "size": "large"
+   },
+   {
+     "Keyword": "Growth",
+     "size": "S"
+   },
+   {
+     "Keyword": "Economy",
+     "size": "S"
+   },
+   {
+     "Keyword": "Technology",
+     "size": "S"
+   },
+   {
+     "Keyword": "Commerce",
+     "size": "S"
+   },
+   {
+     "Keyword": "Design",
+     "size": "S"
+   },
+   {
+     "Keyword": "Transportation",
+     "size": "S"
+   },
+   {
+     "Keyword": "Socialism",
+     "size": "large"
+   },
+   {
+     "Keyword": "Public-private partnerships ",
+     "size": "S"
+   },
+   {
+     "Keyword": "Production capacity",
+     "size": "S"
+   },
+   {
+     "Keyword": "Cooperative",
+     "size": "S"
+   },
+   {
+     "Keyword": "Manufacturing",
+     "size": "S"
+   },
+   {
+     "Keyword": "Quota",
+     "size": "S"
+   },
+   {
+     "Keyword": "Balance",
+     "size": "S"
+   },
+   {
+     "Keyword": "System",
+     "size": "S"
+   },
+   {
+     "Keyword": "Make great efforts",
+     "size": "S"
+   },
+   {
+     "Keyword": "Reform",
+     "size": "large"
+   },
+   {
+     "Keyword": "Enterprise",
+     "size": "large"
+   },
+   {
+     "Keyword": "Education",
+     "size": "large"
+   },
+   {
+     "Keyword": "Development",
+     "size": "S"
+   },
+   {
+     "Keyword": "Market economy",
+     "size": "large"
+   },
+   {
+     "Keyword": "Policies",
+     "size": "S"
+   },
+   {
+     "Keyword": "Industrial structure",
+     "size": "large"
+   },
+   {
+     "Keyword": "National economy ",
+     "size": "large"
+   },
+   {
+     "Keyword": "Adjust",
+     "size": "S"
+   },
+   {
+     "Keyword": "Management",
+     "size": "large"
+   },
+   {
+     "Keyword": "Modernization",
+     "size": "large"
+   },
+   {
+     "Keyword": "Fund",
+     "size": "S"
+   },
+   {
+     "Keyword": "Industrial scale",
+     "size": "large"
+   },
+   {
+     "Keyword": "Economic system",
+     "size": "large"
+   },
+   {
+     "Keyword": "Macroeconomic control",
+     "size": "large"
+   },
+   {
+     "Keyword": "Optimization",
+     "size": "large"
+   },
+   {
+     "Keyword": "Infrastructure",
+     "size": "large"
+   },
+   {
+     "Keyword": "Cultural and ideological progress",
+     "size": "large"
+   },
+   {
+     "Keyword": "Pillar industry",
+     "size": "S"
+   },
+   {
+     "Keyword": "Opening up",
+     "size": "large"
+   },
+   {
+     "Keyword": "National defense",
+     "size": "S"
+   },
+   {
+     "Keyword": "Civil-military integration",
+     "size": "large"
+   },
+   {
+     "Keyword": "Technological transformation",
+     "size": "S"
+   },
+   {
+     "Keyword": "Quality",
+     "size": "S"
+   },
+   {
+     "Keyword": "Culture",
+     "size": "large"
+   },
+   {
+     "Keyword": "Fixed assets",
+     "size": "S"
+   },
+   {
+     "Keyword": "Economic benefits",
+     "size": "large"
+   },
+   {
+     "Keyword": "Consumer goods",
+     "size": "S"
+   },
+   {
+     "Keyword": "Ownership",
+     "size": "S"
+   },
+   {
+     "Keyword": "Foreign exchange",
+     "size": "S"
+   },
+   {
+     "Keyword": "Develop China's western region",
+     "size": "large"
+   },
+   {
+     "Keyword": "Public finance",
+     "size": "S"
+   },
+   {
+     "Keyword": "Import & Export",
+     "size": "large"
+   },
+   {
+     "Keyword": "Use foreign capital",
+     "size": "S"
+   },
+   {
+     "Keyword": "Social security",
+     "size": "S"
+   },
+   {
+     "Keyword": "Structural reform",
+     "size": "large"
+   },
+   {
+     "Keyword": "Consumer goods",
+     "size": "S"
+   },
+   {
+     "Keyword": "Communications and transport",
+     "size": "S"
+   },
+   {
+     "Keyword": "Labor force",
+     "size": "S"
+   },
+   {
+     "Keyword": "National income",
+     "size": "S"
+   },
+   {
+     "Keyword": "Tertiary industry",
+     "size": "large"
+   },
+   {
+     "Keyword": "Agricultural products",
+     "size": "S"
+   },
+   {
+     "Keyword": "Restructuring",
+     "size": "large"
+   },
+   {
+     "Keyword": "Modernized governance",
+     "size": "large"
+   },
+   {
+     "Keyword": "Urbanization",
+     "size": "large"
+   },
+   {
+     "Keyword": "Informatization",
+     "size": "large"
+   },
+   {
+     "Keyword": "High-tech",
+     "size": "S"
+   },
+   {
+     "Keyword": "Resources",
+     "size": "S"
+   },
+   {
+     "Keyword": "Ecosystem",
+     "size": "large"
+   },
+   {
+     "Keyword": "Energy conservation",
+     "size": "large"
+   },
+   {
+     "Keyword": "Public service",
+     "size": "large"
+   },
+   {
+     "Keyword": "Investment structure",
+     "size": "S"
+   },
+   {
+     "Keyword": "Employment",
+     "size": "S"
+   },
+   {
+     "Keyword": "Overall planning",
+     "size": "S"
+   },
+   {
+     "Keyword": "Housing",
+     "size": "S"
+   },
+   {
+     "Keyword": "Finance",
+     "size": "S"
+   },
+   {
+     "Keyword": "Functional zones",
+     "size": "S"
+   },
+   {
+     "Keyword": "Layout",
+     "size": "S"
+   },
+   {
+     "Keyword": "Culture industry",
+     "size": "S"
+   },
+   {
+     "Keyword": "Actively respond to climate change",
+     "size": "large"
+   },
+   {
+     "Keyword": "Comprehensive governance",
+     "size": "large"
+   },
+   {
+     "Keyword": "Belt and Road Initiative",
+     "size": "large"
+   },
+   {
+     "Keyword": "Equality",
+     "size": "large"
+   },
+   {
+     "Keyword": "Efficiency",
+     "size": "large"
+   },
+   {
+     "Keyword": "Moderately prosperous society",
+     "size": "large"
+   },
+   {
+     "Keyword": "Industrial chain",
+     "size": "S"
+   },
+   {
+     "Keyword": "Poverty alleviation",
+     "size": "large"
+   },
+   {
+     "Keyword": "Environmental protection",
+     "size": "large"
+   },
+   {
+     "Keyword": "Public health services",
+     "size": "large"
+   },
+   {
+     "Keyword": "Safeguard mechanism",
+     "size": "S"
+   },
+   {
+     "Keyword": "Intellectual property rights",
+     "size": "S"
+   },
+   {
+     "Keyword": "Innovativeness or creativity",
+     "size": "large"
+   },
+   {
+     "Keyword": "Law-based governance",
+     "size": "large"
+   },
+   {
+     "Keyword": "Fair competition",
+     "size": "S"
+   },
+   {
+     "Keyword": "Monetary policy",
+     "size": "S"
+   },
+   {
+     "Keyword": "Aging population",
+     "size": "S"
+   },
+   {
+     "Keyword": "Public security",
+     "size": "S"
+   },
+   {
+     "Keyword": "Anti-corruption",
+     "size": "S"
+   },
+   {
+     "Keyword": "Multilateral free trade agreements",
+     "size": "S"
+   },
+   {
+     "Keyword": "Made in China 2025",
+     "size": "S"
+   },
+   {
+     "Keyword": "Reform and opening-up",
+     "size": "large"
+   },
+   {
+     "Keyword": "Innovation-driven",
+     "size": "large"
+   },
+   {
+     "Keyword": "Invigorating China through science and education",
+     "size": ""
+   },
+   {
+     "Keyword": "Reinvigorating China through human resource development",
+     "size": "large"
+   },
+   {
+     "Keyword": "Construct a new socialist countryside",
+     "size": ""
+   },
+   {
+     "Keyword": "National People's Congress",
+     "size": ""
+   },
+   {
+     "Keyword": "Political development",
+     "size": ""
+   },
+   {
+     "Keyword": "Circular economy",
+     "size": "large"
+   },
+   {
+     "Keyword": "A scientific outlook on development",
+     "size": ""
+   },
+   {
+     "Keyword": "People's lives",
+     "size": ""
+   },
+   {
+     "Keyword": "Sustainable development strategy",
+     "size": "large"
+   },
+   {
+     "Keyword": "Big data strategy",
+     "size": ""
+   },
+   {
+     "Keyword": "Global economic governance ",
+     "size": ""
+   },
+   {
+     "Keyword": "Coordinated regional development",
+     "size": "large"
+   },
+   {
+     "Keyword": "Healthy China",
+     "size": ""
+   },
+   {
+     "Keyword": "Multiparty cooperation and political consultation",
+     "size": ""
+   },
+   {
+     "Keyword": "Regional ethnic autonomy",
+     "size": ""
+   },
+   {
+     "Keyword": "Emerging industry",
+     "size": ""
+   },
+   {
+     "Keyword": "Marine economy",
+     "size": ""
+   },
+   {
+     "Keyword": "Open economy",
+     "size": ""
+   },
+   {
+     "Keyword": "Urban and rural construction",
+     "size": "large"
+   },
+   {
+     "Keyword": "Special economic zone",
+     "size": ""
+   },
+   {
+     "Keyword": "Cultural innovation",
+     "size": ""
+   },
+   {
+     "Keyword": "Legal system development",
+     "size": ""
+   }
+  ]
+}

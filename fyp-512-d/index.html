@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://newstest.cgtn.com/event/2020/fyps_mobile/index.html" />
+  <meta property="og:title" content="five year plan" />
+  <meta property="og:description" content="five year plan description" />
+  <meta property="og:image" content="" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-touch-fullscreen" content="no">
+
+  <title>five year plan</title>
+
+
+  <script src="lib/pageable.min.js"></script>
+  <script language="javascript" type="text/javascript" src="lib/jquery-3.4.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Word.js"></script>
+  <script src="lib/p5.js"></script>
+
+  <script src="lib/index.js"></script>
+  <script src="lib/jquery.slimscroll.min.js"></script>
+  <script src="lib/jquery.easing.min.js"></script>
+  <script src="lib/jquery.fullPage.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spectral+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/pageable.min.css" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/style_M.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <script>
+    $(document).ready(function() {
+      var hash = window.location.hash;
+      if (hash) {
+        setTimeout(function() {
+          document.location.href = window.location.href.split('#')[0];
+        }, 100);
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="loading-page">
+    <div class="cell">
+      <div class="pl pl-leapfrog"></div>
+      <div class="pl-name">L O A D I N G</div>
+      <div class="pl-annotation">CGTN recommends using Chrome or Firefox for a better browsing experience.</div>
+    </div>
+  </div>
+
+  <div id="progress-container">
+    <div class="progress-bar" id="upperBar"></div>
+  </div>
+  <div id="cover-bg">
+    <p id="cover-para"></p>
+  </div>
+  <div id="upper">
+    <div id="styled-bars">
+      <div class="upper-bar"></div>
+      <div class="under-bar"></div>
+    </div>
+
+    <div id="menu">
+      <div id="credit">
+        <span id="back"><img class="credit-img" src="img/credit.png" alt="credit">Back to top</span>
+        <span class="vertical-line">|</span>
+        <span><a href="https://www.cgtn.com/"><img id="explore-cgtn" src="img/cgtn.png" alt="cgtn"></a></span>
+      </div>
+      <div id="menu-guide">
+        <a class="scroll-down-img"></a>
+        <p class="menu-guide-text">Explore</p>
+      </div>
+      <div id="menu-button">
+        <!-- <p class = "menu-guide">Explore sections that are</p> -->
+        <span class="button-border"><button id="Task" class="button">Objectives</button></span>
+        <span class="button-border"><button id="Manufacturing" class="button">Industry</button></span>
+        <span class="button-border"><button id="Agriculture" class="button">Agriculture</button></span>
+        <span class="button-border"><button id="Health" class="button">Health</button></span>
+        <span class="button-border"><button id="Democracy" class="button">Governance</button></span>
+        <!-- <span class = "button-border"><button id = "Reform" class = "button">Reform</button></span> -->
+        <span class="button-border"><button id="Tech" class="button">Sci & Tech</button></span>
+        <span class="button-border"><button id="Environment" class="button">Environment</button></span>
+        <span class="button-border"><button id="Trade" class="button">Trade</button></span>
+        <span class="button-border"><button id="Defence" class="button">Defense</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="container">
+    <div id="fyp-head">
+      <div id="head-content0" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1953</p>
+          <p class="aligncenter">I</p>
+          <p class="alignright">1957</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+
+        <!-- <div class="annotation_M">1st</div> -->
+      </div>
+
+      <div id="head-content1" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1986</p>
+          <p class="aligncenter">VII</p>
+          <p class="alignright">1990</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">7th</div> -->
+      </div>
+
+      <div id="head-content2" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1991</p>
+          <p class="aligncenter">VIII</p>
+          <p class="alignright">1995</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">8th</div> -->
+      </div>
+
+      <div id="head-content3" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">1996</p>
+          <p class="aligncenter">IX</p>
+          <p class="alignright">2000</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">9th</div> -->
+      </div>
+
+      <div id="head-content4" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2001</p>
+          <p class="aligncenter">X</p>
+          <p class="alignright">2005</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">10th</div> -->
+      </div>
+
+      <div id="head-content5" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2006</p>
+          <p class="aligncenter">XI</p>
+          <p class="alignright">2010</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">11th</div> -->
+      </div>
+
+      <div id="head-content6" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2011</p>
+          <p class="aligncenter">XII</p>
+          <p class="alignright">2015</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">12th</div> -->
+      </div>
+
+      <div id="head-content7" class="head-content">
+        <div class="head-title">
+          <p class="alignleft">2016</p>
+          <p class="aligncenter">XIII</p>
+          <p class="alignright">2020</p>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="underline"></div>
+        <!-- <div class="annotation_M">13th</div> -->
+      </div>
+
+    </div>
+    <div id="theCanvas"></div>
+  </div>
+
+  <div id="scroll-page">
+    <div class="section section0">
+      <div data-anchor="Page 0" class="">
+        <div id="cover-border">
+          <div class="cover-img-div"><img class="cover-img" src="img/cover-star.png"></div>
+          <div id="cover-content">
+            <h1 class="cover-title-M"><span class="cover-title-span-M">&#8200;Designing the future:&#8200;<br /> &#8200;China's Five-Year Plans&#8200;</span> <span class="sub-cover-content">1953 - 2020</span></h1>
+            <p id="CGTNlogo2" class="CGTNlogo">
+              <a href="https://www.cgtn.com/"> <img src="img/cgtn.png" alt="CGTN"></a>
+            </p>
+          </div>
+          <p id="scrollDown" class="scroll-down"><span class="scroll-down-text">Scroll down to take the tour</span></p>
+          <a class="scroll-down-link scroll-down-arrow"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section1">
+      <div class="card-border">
+        <div id="card1" class="scroll-card">
+          <!-- <h1 class="card-title">intro1</h1> -->
+
+          <!-- <h1 class="card-title">intro1</h1> -->
+          <p>China's Five-Year Plan (FYP) is one of the country's most important<span class="stressed">policy blueprints.</span> Drawn up every five years since 1953, it sets <span class="stressed-long"> medium-term goals for China's social and
+              economic development</span> and is the barometer against which
+            progress is measured. </p>
+          <p>2020 is the last year of the 13th Five-Year Plan, which was adopted on March 15, 2016. The 14th plan (2021–2025) is currently being developed.</p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="section section2">
+      <div class="card-border">
+        <div id="card2" class="scroll-card">
+          <!-- <h1 class="card-title">Show All Texts</h1> -->
+          <!-- <p>显示所有文本，一五字数最多。</p> -->
+          <p>This table shows the outlines of each of China's FYPs*. The length of the first FYP, being the foundation for future such policies, is <span class="stressed-long"> longer than all the rest.</span> </p>
+          <p>By comparison, the number of policies drop for several years after 1953 but start to climb consistently in 2006.</p>
+          <p class="annotation" id="card-note">*The second to sixth FYPs are excluded, as they are not available.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section4">
+      <div class="card-border">
+        <div id="card3" class="scroll-card blank-card">
+          <p class="scroll-down-small"><a class="scroll-down-link-small scroll-down-arrow"></a></p>
+          <p class="scroll-down-text-small gap-arrow">continue reading</p>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div id="manufacture-text1-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We take the capital construction of heavy industry as the focus of the First FYP for the development of the national economy and start with the 156 industrial projects the
+        Soviet Union designed to help China." </span></p>
+  </div>
+
+  <div id="manufacture-text2-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will fully implement the 'Made in China 2025' action plan… to foster a new competitive edge in manufacturing." </span></p>
+  </div>
+
+  <div id="agriculture-text1-story" class="hover-text">
+    <p class="text-highlight-p"><span class="quote-span text-highlight-span">"We will continue to give top priority to resolving the 'three rural issues,'… promote the construction of a new socialist countryside, and promote the sound development of
+        urbanization. "</span></p>
+  </div>
+
+
+
+  <script type="text/javascript" src="sketch_M.js"></script>
+
+</body>
+
+</html>
