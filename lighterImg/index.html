@@ -2,7 +2,7 @@
     <html>  
     <head>  
     <meta charset="UTF-8">  
-    <title>点亮图层</title>  
+    <title>长按滑动：盲人触感测试</title>  
     <!-- 新 Bootstrap 核心 CSS 文件 -->  
     <link rel="stylesheet" href="css/lighter.css">  
     <!-- 可选的Bootstrap主题文件（一般不用引入） -->  
@@ -25,6 +25,8 @@ var canvasContext = canvas.getContext('2d');
 var lineCanvas = document.querySelector('#canvas-lines');
 var lineCanvasContext = lineCanvas.getContext('2d');
 
+var mousedown = false;
+
 //points的存活时间？
 var pointLifetime = 500;
 
@@ -37,8 +39,12 @@ var points = [];
 
 //INIT
 function init() {
+
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
+    // document.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('touchmove', onMouseMove);  
+    // document.addEventListener('touchmove', onMouseMove);
     window.addEventListener('resize', resizeCanvases);
     resizeCanvases();
     tick();
@@ -56,14 +62,36 @@ function resizeCanvases() {
 event.changedTouches[0].clientX
 
 //鼠标移动时，推入points数组，包含有记录出生时间，出生位置
-function onMouseMove(event) {
+function onMouseMove(e) {
+    e.preventDefault();
+    if(mousedown) {
     points.push({
         time: Date.now(),
-        x: event.clientX || event.changedTouches[0].clientX,
-        y: event.clientY || event.changedTouches[0].clientY+850
+        x: e.clientX || e.changedTouches[0].clientX,
+        y: e.clientY || e.changedTouches[0].clientY+850
     });
+    }
     // console.log(points);
 }
+
+    function onMouseDown(e){
+        e.preventDefault();
+        mousedown=true;
+    }
+
+    function onMouseUp(e){
+        e.preventDefault();
+        mousedown=false;
+    }
+
+// function onMouseDown(event) {
+//     points.push({
+//         time: Date.now(),
+//         x: event.clientX || event.changedTouches[0].clientX,
+//         y: event.clientY || event.changedTouches[0].clientY+850
+//     });
+//     console.log(points);
+// }
 
 function tick() {
     // Remove old points
@@ -78,7 +106,6 @@ function tick() {
     drawImageCanvas();
 
 
-
 //重复执行tick这个函数    
     requestAnimationFrame(tick);
 
@@ -89,9 +116,9 @@ function tick() {
 
 function drawLineCanvas() {
     var minimumLineWidth = 70;
-    var maximumLineWidth = 140;
+    var maximumLineWidth = 70;
     var lineWidthRange = maximumLineWidth - minimumLineWidth;
-    var maximumSpeed = 70;
+    var maximumSpeed = 100;
 
 //clearRect--->清空元素内部某一部分的像素(慢慢清空自己画的点)
     lineCanvasContext.clearRect(0, 0, lineCanvas.width, lineCanvas.height);
@@ -100,7 +127,7 @@ function drawLineCanvas() {
     lineCanvasContext.lineCap = 'round';
 
 //shadowBlur---> 阴影的模糊级数
-    lineCanvasContext.shadowBlur = 70;
+    lineCanvasContext.shadowBlur = 20;
     lineCanvasContext.shadowColor = '#000';
 
     for (var i = 1; i < points.length; i++) {
@@ -150,10 +177,10 @@ function drawImageCanvas() {
     canvasContext.save();
 
     var img = new Image();
-    img.src = "img/hungerGray.png";
+    img.src = "img/gray.png";
     canvasContext.drawImage(img,0,0,canvas.width,canvas.height);
 
-    console.log(canvas.width);
+    // console.log(canvas.width);
 
 
     // canvasContext.fillStyle = "rgb(0, 0, 0)";
