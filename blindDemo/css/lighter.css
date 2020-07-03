@@ -1,0 +1,30 @@
+body {
+    /*min-height: 100vh;*/
+
+    background-color: #000;
+}
+#canvas-overlay {
+    background-image: url(../img/car.png);
+    width: 100vw;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+
+    z-index: 98;
+    opacity: 0.85;
+
+}
+#canvas-lines {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    opacity: 0.05;
+}
+body {
+    margin: 0;
+}
+body p{
+    : white;
+    z-index: 10000;
+}
